@@ -16,12 +16,7 @@ export default {
     Footer,
   },
   mounted() {
-    const isLogin = window.localStorage.getItem("isLogin");
-    if (isLogin) {
-      if (this.$route.fullPath === "/") this.$router.replace("/home");
-    } else {
-      this.$router.push("/login");
-    }
+    if (this.$route.path === "/") this.$router.replace("/home");
   },
 };
 </script>

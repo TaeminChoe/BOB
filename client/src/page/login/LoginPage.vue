@@ -11,16 +11,17 @@ export default {
   name: "LoginPage",
   methods: {
     handleClickLogin() {
-      window.localStorage.setItem("isLogin", true);
+      // window.localStorage.setItem("isLogin", true);
+      this.$store.commit("setAuth", "client");
       this.$router.push("/");
     },
   },
   props: {},
-  mounted() {
-    const isLogin = window.localStorage.getItem("isLogin");
-    if (isLogin) {
-      this.$router.replace("/");
-    }
-  },
+  // mounted() {
+  //   const isLogin = window.localStorage.getItem("isLogin");
+  //   if (isLogin) {
+  //     this.$router.replace("/");
+  //   }
+  // },
 };
 </script>

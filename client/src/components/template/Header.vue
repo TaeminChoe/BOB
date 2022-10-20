@@ -32,15 +32,21 @@ export default {
           route: "/skill",
         },
         {
-          name: "Project",
-          route: "/project/list",
+          name: "login",
+          route: "/login",
+        },
+        {
+          name: "admin",
+          route: "/admin",
         },
       ],
     };
   },
   methods: {
     handleClickLogout() {
-      this.$store.commit("setModalOpen", true);
+      this.$router.push("/login");
+      this.$store.commit("setAuth", "");
+      // this.$store.commit("setModalOpen", true);
     },
   },
 };
