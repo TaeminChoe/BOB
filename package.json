@@ -1,0 +1,15 @@
+{
+  "name": "bob",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/TaeminChoe/BOB.git",
+  "author": "TaeminChoe <taeminteng@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "start:client": "cd ./client && npm run serve",
+    "build:client": "cd ./client && npm run build",
+    "deploy:client": "cd ./client && npm run deploy",
+    "start:server": "cd ./server && npm run dev",
+    "deploy:server": "git subtree push --prefix server heroku main"
+  }
+}
