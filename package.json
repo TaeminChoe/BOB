@@ -8,8 +8,8 @@
   "scripts": {
     "start:client": "cd ./client && npm run serve",
     "build:client": "cd ./client && npm run build",
-    "deploy:client": "cd ./client && npm run deploy",
-    "start:server": "cd ./server && npm run dev",
+    "deploy:client": "cd ./client && npm run deploy && start /max `https://taeminchoe.github.io/BOB/`",
+    "start:server": "cd ./server && npm run start",
     "deploy:server": "git subtree push --prefix server heroku main"
   }
 }
