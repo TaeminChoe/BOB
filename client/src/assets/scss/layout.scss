@@ -5,25 +5,29 @@
   align-items: center;
   justify-content: center;
 
-  .back-header {
+  .header-layout {
     width: 100%;
-    height: 50px;
+
     display: flex;
     align-items: center;
     img {
       padding: 0.9rem;
+    }
+    .set-right {
+      margin-left: auto;
     }
   }
 
   .title-text {
     align-self: flex-start;
     padding: 1rem;
-    font-size: 2.3rem;
-    font-family: "Comfortaa", cursive;
+    font-size: 1.8rem;
+    font-weight: 400;
+    font-family: "Roboto", sans-serif;
   }
 
   .submit-layout {
-    width: 90%;
+    width: 92.5%;
     display: flex;
     flex-flow: column;
 
