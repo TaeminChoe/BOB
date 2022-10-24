@@ -5,9 +5,9 @@
   align-items: center;
   justify-content: center;
 
+  /* header layout*/
   .header-layout {
     width: 100%;
-
     display: flex;
     align-items: center;
     img {
@@ -26,6 +26,7 @@
     font-family: "Roboto", sans-serif;
   }
 
+  /* submit form 화면 layout :: input, button*/
   .submit-layout {
     width: 92.5%;
     display: flex;
@@ -54,6 +55,57 @@
     }
     .bgcolor-orange {
       background-color: #ff9551;
+    }
+  }
+
+  /*list 화면 layout*/
+  .list-layout {
+    width: 92.5%;
+    display: flex;
+    flex-flow: column;
+    padding-bottom: 4rem;
+
+    .list-box {
+      width: calc(100% - 1rem);
+      height: 12rem;
+      border: 1px solid black;
+      border-radius: 8px;
+      margin: 0.5rem 0;
+      padding: 0.5rem;
+      display: flex;
+
+      .img-box {
+        width: 50%;
+        height: 100%;
+        overflow: hidden;
+        position: relative;
+        background-color: pink;
+        img {
+          height: 100%;
+          background-size: cover;
+          position: absolute;
+          left: 50%;
+          transform: translate(-50%, 0);
+        }
+      }
+
+      .text-box {
+        font-family: "Roboto";
+        font-style: normal;
+        width: 50%;
+        .list-title {
+          height: calc(50% - 1rem);
+          padding: 0.5rem;
+          font-weight: 700;
+          font-size: 1.4rem;
+        }
+        .list-discription {
+          height: calc(50% - 1rem);
+          padding: 0.5rem;
+          font-weight: 400;
+          font-size: 11px;
+        }
+      }
     }
   }
 }

@@ -1,9 +1,13 @@
+@charset "UTF-8";
 .template-layout {
   padding-top: 2.5rem;
   display: flex;
   flex-flow: column;
   align-items: center;
   justify-content: center;
+  /* header layout*/
+  /* submit form 화면 layout :: input, button*/
+  /*list 화면 layout*/
 }
 .template-layout .header-layout {
   width: 100%;
@@ -25,7 +29,6 @@
 }
 .template-layout .submit-layout {
   width: 92.5%;
-
   display: flex;
   flex-flow: column;
 }
@@ -51,4 +54,50 @@
 }
 .template-layout .submit-layout .bgcolor-orange {
   background-color: #ff9551;
+}
+.template-layout .list-layout {
+  width: 92.5%;
+  display: flex;
+  flex-flow: column;
+  padding-bottom: 4rem;
+}
+.template-layout .list-layout .list-box {
+  width: calc(100% - 1rem);
+  height: 12rem;
+  border: 1px solid black;
+  border-radius: 8px;
+  margin: 0.5rem 0;
+  padding: 0.5rem;
+  display: flex;
+}
+.template-layout .list-layout .list-box .img-box {
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  background-color: pink;
+}
+.template-layout .list-layout .list-box .img-box img {
+  height: 100%;
+  background-size: cover;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+.template-layout .list-layout .list-box .text-box {
+  font-family: "Roboto";
+  font-style: normal;
+  width: 50%;
+}
+.template-layout .list-layout .list-box .text-box .list-title {
+  height: calc(50% - 1rem);
+  padding: 0.5rem;
+  font-weight: 700;
+  font-size: 1.4rem;
+}
+.template-layout .list-layout .list-box .text-box .list-discription {
+  height: calc(50% - 1rem);
+  padding: 0.5rem;
+  font-weight: 400;
+  font-size: 11px;
 }
