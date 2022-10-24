@@ -8,7 +8,7 @@
     <div class="submit-layout">
       <input placeholder="Your Name" />
       <input placeholder="ID" />
-      <input placeholder="Create Passwird" />
+      <input placeholder="Create Password" />
       <input placeholder="Check Password" />
       <button class="bgcolor-green" @click="handleClickSignup">NEXT</button>
     </div>
