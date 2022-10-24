@@ -5,7 +5,7 @@
       <img src="@/assets/img/hamburger.png" class="set-right" />
     </div>
     <div class="title-text"><div>Sign Up</div></div>
-    <div class="submit-layout">
+    <div class="content-layout">
       <input placeholder="Your Name" />
       <input placeholder="ID" />
       <input placeholder="Create Password" />

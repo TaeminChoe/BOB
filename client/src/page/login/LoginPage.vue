@@ -5,7 +5,7 @@
       <img src="@/assets/img/hamburger.png" class="set-right" />
     </div>
     <div class="title-text"><div>Login</div></div>
-    <div class="submit-layout">
+    <div class="content-layout">
       <input placeholder="ID" />
       <input placeholder="Password" />
       <button class="bgcolor-green" @click="handleClickLogin">NEXT</button>
