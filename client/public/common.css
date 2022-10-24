@@ -1,1 +1,8 @@
 /* 공통적으로 적용할 CSS 작성 */
+
+/* Slide Menu */
+.bm-burger-button {
+  left: unset !important;
+  right: 20px;
+  top: 20px !important;
+}

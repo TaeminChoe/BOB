@@ -25,6 +25,7 @@
 }
 .template-layout .submit-layout {
   width: 92.5%;
+
   display: flex;
   flex-flow: column;
 }

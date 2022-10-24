@@ -1,19 +1,24 @@
 <template>
-  <Header />
-  <div class="content-container">
-    <router-view />
+  <div>
+    <Header />
+    <SlideMenu />
+    <div class="content-container">
+      <router-view />
+    </div>
+    <Navigation />
   </div>
-  <Footer />
 </template>
 
 <script>
 import Header from "./Header.vue";
-import Footer from "./Footer.vue";
+import Navigation from "./Navigation.vue";
+import SlideMenu from "./SlideMenu.vue";
 export default {
   name: "TemplateLayout",
   components: {
     Header,
-    Footer,
+    Navigation,
+    SlideMenu,
   },
   mounted() {
     if (this.$route.path === "/") this.$router.replace("/home");
