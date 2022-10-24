@@ -8,12 +8,12 @@ const {
   MYSQL_DATABASE = "",
 } = process.env;
 
-console.log(`
-  MYSQL_HOST : ${MYSQL_HOST}
-  MYSQL_USERNAME : ${MYSQL_USERNAME}
-  MYSQL_PASSWORD : ${MYSQL_PASSWORD}
-  MYSQL_DATABASE : ${MYSQL_DATABASE}
-`);
+// console.log(`
+//   MYSQL_HOST : ${MYSQL_HOST}
+//   MYSQL_USERNAME : ${MYSQL_USERNAME}
+//   MYSQL_PASSWORD : ${MYSQL_PASSWORD}
+//   MYSQL_DATABASE : ${MYSQL_DATABASE}
+// `);
 
 const connection = MySQL.createConnection({
   host: MYSQL_HOST,
