@@ -1,10 +1,29 @@
 <template>
-  <div>
-    <div>회원가입 페이지입니다.</div>
+  <div class="template-layout">
+    <div class="header-layout">
+      <img src="@/assets/img/BOB.png" />
+      <img src="@/assets/img/hamburger.png" class="set-right" />
+    </div>
+    <div class="title-text"><div>Sign Up</div></div>
+    <div class="submit-layout">
+      <input placeholder="Your Name" />
+      <input placeholder="ID" />
+      <input placeholder="Create Passwird" />
+      <input placeholder="Check Password" />
+      <button class="bgcolor-green" @click="handleClickSignup">NEXT</button>
+    </div>
   </div>
 </template>
+
 <script>
+import "@/assets/css/layout.css";
+
 export default {
   name: "SignupPage",
+  methods: {
+    handleClickSignup() {
+      this.$router.push("/");
+    },
+  },
 };
 </script>

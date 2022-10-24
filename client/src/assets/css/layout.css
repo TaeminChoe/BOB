@@ -1,0 +1,54 @@
+.template-layout {
+  padding-top: 2.5rem;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+}
+.template-layout .header-layout {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+.template-layout .header-layout img {
+  padding: 0.9rem;
+}
+.template-layout .header-layout .set-right {
+  margin-left: auto;
+}
+.template-layout .title-text {
+  align-self: flex-start;
+  padding: 1rem;
+  font-size: 1.8rem;
+  font-weight: 400;
+  font-family: "Roboto", sans-serif;
+}
+.template-layout .submit-layout {
+  width: 92.5%;
+
+  display: flex;
+  flex-flow: column;
+}
+.template-layout .submit-layout input {
+  width: calc(100% - 4px - 1rem);
+  height: 3rem;
+  padding: 0 0.5rem;
+  margin: 0.5rem 0;
+  border: 0.17rem solid black;
+}
+.template-layout .submit-layout button {
+  width: calc(100%);
+  height: 3.5rem;
+  padding: 0 0.5rem;
+  margin: 0.5rem 0;
+  border-radius: 5px;
+  border: 0.17rem solid black;
+  color: white;
+  font-weight: bold;
+}
+.template-layout .submit-layout .bgcolor-green {
+  background-color: #43d392;
+}
+.template-layout .submit-layout .bgcolor-orange {
+  background-color: #ff9551;
+}

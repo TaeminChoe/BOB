@@ -1,12 +1,21 @@
 <template>
-  <div>
-    <div>로그인 페이지입니다.</div>
-    <div><label>아이디</label><input /></div>
-    <div><label>비밀번호</label><input /></div>
-    <button @click="handleClickLogin">로그인하기</button>
+  <div class="template-layout">
+    <div class="header-layout">
+      <img src="@/assets/img/BOB.png" />
+      <img src="@/assets/img/hamburger.png" class="set-right" />
+    </div>
+    <div class="title-text"><div>Login</div></div>
+    <div class="submit-layout">
+      <input placeholder="ID" />
+      <input placeholder="Password" />
+      <button class="bgcolor-green" @click="handleClickLogin">NEXT</button>
+      <button class="bgcolor-orange">REGISTER</button>
+    </div>
   </div>
 </template>
+
 <script>
+import "@/assets/css/layout.css";
 export default {
   name: "LoginPage",
   methods: {

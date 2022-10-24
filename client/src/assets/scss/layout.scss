@@ -1,0 +1,59 @@
+.template-layout {
+  padding-top: 2.5rem;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+
+  .header-layout {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    img {
+      padding: 0.9rem;
+    }
+    .set-right {
+      margin-left: auto;
+    }
+  }
+
+  .title-text {
+    align-self: flex-start;
+    padding: 1rem;
+    font-size: 1.8rem;
+    font-weight: 400;
+    font-family: "Roboto", sans-serif;
+  }
+
+  .submit-layout {
+    width: 92.5%;
+    display: flex;
+    flex-flow: column;
+
+    input {
+      width: calc(100% - 4px - 1rem);
+      height: 3rem;
+      padding: 0 0.5rem;
+      margin: 0.5rem 0;
+      border: 0.17rem solid black;
+    }
+
+    button {
+      width: calc(100%);
+      height: 3.5rem;
+      padding: 0 0.5rem;
+      margin: 0.5rem 0;
+      border-radius: 5px;
+      border: 0.17rem solid black;
+      color: white;
+      font-weight: bold;
+    }
+    .bgcolor-green {
+      background-color: #43d392;
+    }
+    .bgcolor-orange {
+      background-color: #ff9551;
+    }
+  }
+}
