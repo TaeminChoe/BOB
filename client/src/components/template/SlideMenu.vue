@@ -1,5 +1,10 @@
 <template>
-  <Slide right>
+  <Slide
+    right
+    :isOpen="this.$store.state.menuOpen"
+    @openMenu="openMenu"
+    @closeMenu="closeMenu"
+  >
     <div>
       <h1>계정 정보 영역</h1>
       <br />
@@ -16,23 +21,34 @@
     <a id="test3" href="#">
       <span>test3</span>
     </a>
+    <div class="logout" @click="handleClickLogout">로그아웃</div>
   </Slide>
 </template>
 
 <script>
-import { Slide } from "vue3-burger-menu"; // import the CSS transitions you wish to use, in this case we are using `Slide`
+import { Slide } from "vue3-burger-menu";
 export default {
   name: "SlideMenu",
   data() {
     return {
-      isOpen: true,
+      isOpen: false,
     };
   },
-  methods: {},
+  methods: {
+    openMenu() {
+      this.$store.state.menuOpen = true;
+    },
+    closeMenu() {
+      this.$store.state.menuOpen = false;
+    },
+    handleClickLogout() {
+      this.$store.commit("setAuth", "");
+      this.$store.state.menuOpen = false;
+      this.$router.push("/login");
+    },
+  },
   components: {
     Slide,
   },
 };
 </script>
-
-<style scoped></style>
