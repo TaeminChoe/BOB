@@ -1,7 +1,7 @@
 <template>
   <div class="template-layout">
     <div class="title-text"><div>Restaurant</div></div>
-    <div class="submit-layout">
+    <div class="content-layout">
       <input placeholder="Title" />
       <input placeholder="Address" />
       <input placeholder="Number" />

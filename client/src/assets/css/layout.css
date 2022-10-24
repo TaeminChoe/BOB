@@ -1,4 +1,3 @@
-@charset "UTF-8";
 body .bgcolor-green {
   background-color: #43d392;
 }
@@ -7,19 +6,17 @@ body .bgcolor-orange {
 }
 
 .template-layout {
-  padding-top: 2.5rem;
   display: flex;
   flex-flow: column;
   align-items: center;
   justify-content: center;
   /* header layout*/
-  /* submit form 화면 layout :: input, button*/
-  /*list 화면 layout*/
 }
 .template-layout .header-layout {
   width: 100%;
   display: flex;
   align-items: center;
+  padding-top: 2.5rem;
 }
 .template-layout .header-layout img {
   padding: 0.9rem;
@@ -34,7 +31,7 @@ body .bgcolor-orange {
   align-items: center;
   padding: 1rem;
   font-size: 1.8rem;
-  font-weight: 400;
+  font-weight: 700;
   font-family: "Roboto", sans-serif;
 }
 .template-layout .title-text button {
@@ -47,19 +44,20 @@ body .bgcolor-orange {
   font-weight: bold;
   margin-left: auto;
 }
-.template-layout .submit-layout {
+.template-layout .content-layout {
   width: 92.5%;
   display: flex;
   flex-flow: column;
+  padding-bottom: 4rem;
 }
-.template-layout .submit-layout input {
+.template-layout .content-layout input {
   width: calc(100% - 4px - 1rem);
   height: 3rem;
   padding: 0 0.5rem;
   margin: 0.5rem 0;
   border: 0.17rem solid black;
 }
-.template-layout .submit-layout button {
+.template-layout .content-layout button {
   width: calc(100%);
   height: 3.5rem;
   padding: 0 0.5rem;
@@ -69,13 +67,7 @@ body .bgcolor-orange {
   color: white;
   font-weight: bold;
 }
-.template-layout .list-layout {
-  width: 92.5%;
-  display: flex;
-  flex-flow: column;
-  padding-bottom: 4rem;
-}
-.template-layout .list-layout .list-box {
+.template-layout .content-layout .list-box {
   width: calc(100% - 1rem);
   height: 12rem;
   border: 1px solid black;
@@ -84,32 +76,32 @@ body .bgcolor-orange {
   padding: 0.5rem;
   display: flex;
 }
-.template-layout .list-layout .list-box .img-box {
+.template-layout .content-layout .list-box .img-box {
   width: 50%;
   height: 100%;
   overflow: hidden;
   position: relative;
   background-color: pink;
 }
-.template-layout .list-layout .list-box .img-box img {
+.template-layout .content-layout .list-box .img-box img {
   height: 100%;
   background-size: cover;
   position: absolute;
   left: 50%;
   transform: translate(-50%, 0);
 }
-.template-layout .list-layout .list-box .text-box {
+.template-layout .content-layout .list-box .text-box {
   font-family: "Roboto";
   font-style: normal;
   width: 50%;
 }
-.template-layout .list-layout .list-box .text-box .list-title {
+.template-layout .content-layout .list-box .text-box .list-title {
   height: calc(50% - 1rem);
   padding: 0.5rem;
   font-weight: 700;
   font-size: 1.4rem;
 }
-.template-layout .list-layout .list-box .text-box .list-discription {
+.template-layout .content-layout .list-box .text-box .list-discription {
   height: calc(50% - 1rem);
   padding: 0.5rem;
   font-weight: 400;

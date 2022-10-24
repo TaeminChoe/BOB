@@ -4,7 +4,7 @@
       <div>Restaurant</div>
       <button class="bgcolor-orange" @click="handleAddList">ADD LIST</button>
     </div>
-    <div class="list-layout">
+    <div class="content-layout">
       <div class="list-box">
         <div class="img-box">
           <img
