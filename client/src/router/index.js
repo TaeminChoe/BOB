@@ -70,7 +70,7 @@ const router = createRouter({
 
 /** 권한에 따른 화면 이동 제한 설정 */
 router.beforeEach((to, from, next) => {
-  // next();
+  store.state.menuOpen = false;
   const { auth } = store.state;
   const allowAuths = to.meta.authorization ?? [];
   // CASE 1. 정상 접근
