@@ -4,12 +4,18 @@
     <router-link to="/home" class="logo-container">
       <img src="https://www.pineone.com/images/logo.png" />
     </router-link>
+    <div @click="handleClickMenu">햄버거로고</div>
   </header>
 </template>
 
 <script>
 export default {
   name: "TemplateHeader",
+  methods: {
+    handleClickMenu() {
+      this.$store.state.menuOpen = true;
+    },
+  },
 };
 </script>
 
