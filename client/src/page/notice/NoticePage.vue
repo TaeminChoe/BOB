@@ -1,10 +1,18 @@
 <template>
   <div>
-    <div>공지사항 페이지입니다.</div>
+    <div>Notice</div>
+    <div>No notices</div>
+
+    <NoticeList />
   </div>
 </template>
 <script>
+import NoticeList from "./NoticeList.vue";
+
 export default {
-  name: "SignupPage",
+  name: "NoticePage",
+  components: {
+    NoticeList,
+  },
 };
 </script>
