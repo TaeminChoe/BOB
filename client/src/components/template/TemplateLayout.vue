@@ -1,10 +1,12 @@
 <template>
-  <Header />
-  <SlideMenu />
-  <div class="content-container">
-    <router-view />
+  <div>
+    <Header />
+    <SlideMenu />
+    <div class="content-container">
+      <router-view />
+    </div>
+    <Navigation />
   </div>
-  <Navigation />
 </template>
 
 <script>
