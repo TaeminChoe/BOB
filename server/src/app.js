@@ -1,4 +1,5 @@
 const express = require("express");
+const { DBConfig } = require("./DBConfig");
 const { ApolloServer, gql } = require("apollo-server-express");
 
 // Construct a schema, using GraphQL schema language
@@ -15,6 +16,7 @@ const resolvers = {
   },
 };
 
+DBConfig();
 const server = new ApolloServer({ typeDefs, resolvers });
 
 const app = express();
