@@ -8,18 +8,17 @@ body {
 }
 
 .template-layout {
-  padding-top: 2.5rem;
   display: flex;
   flex-flow: column;
   align-items: center;
   justify-content: center;
-
 
   /* header layout*/
   .header-layout {
     width: 100%;
     display: flex;
     align-items: center;
+    padding-top: 2.5rem;
     img {
       padding: 0.9rem;
     }
@@ -35,7 +34,7 @@ body {
     align-items: center;
     padding: 1rem;
     font-size: 1.8rem;
-    font-weight: 400;
+    font-weight: 700;
     font-family: "Roboto", sans-serif;
 
     button {
@@ -50,11 +49,11 @@ body {
     }
   }
 
-  /* submit form 화면 layout :: input, button*/
-  .submit-layout {
+  .content-layout {
     width: 92.5%;
     display: flex;
     flex-flow: column;
+    padding-bottom: 4rem;
 
     input {
       width: calc(100% - 4px - 1rem);
@@ -74,14 +73,6 @@ body {
       color: white;
       font-weight: bold;
     }
-  }
-
-  /*list 화면 layout*/
-  .list-layout {
-    width: 92.5%;
-    display: flex;
-    flex-flow: column;
-    padding-bottom: 4rem;
 
     .list-box {
       width: calc(100% - 1rem);
