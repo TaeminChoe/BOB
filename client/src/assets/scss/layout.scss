@@ -1,3 +1,12 @@
+body {
+  .bgcolor-green {
+    background-color: #43d392;
+  }
+  .bgcolor-orange {
+    background-color: #ff9551;
+  }
+}
+
 .template-layout {
   padding-top: 2.5rem;
   display: flex;
@@ -19,11 +28,25 @@
   }
 
   .title-text {
+    width: calc(100% - 2rem);
     align-self: flex-start;
+    display: flex;
+    align-items: center;
     padding: 1rem;
     font-size: 1.8rem;
     font-weight: 400;
     font-family: "Roboto", sans-serif;
+
+    button {
+      width: calc(40%);
+      height: 3.5rem;
+      padding: 0 0.5rem;
+      border-radius: 5px;
+      border: 0.17rem solid black;
+      color: white;
+      font-weight: bold;
+      margin-left: auto;
+    }
   }
 
   /* submit form 화면 layout :: input, button*/
@@ -49,12 +72,6 @@
       border: 0.17rem solid black;
       color: white;
       font-weight: bold;
-    }
-    .bgcolor-green {
-      background-color: #43d392;
-    }
-    .bgcolor-orange {
-      background-color: #ff9551;
     }
   }
 
