@@ -33,7 +33,7 @@ const DBConfig = async () => {
     });
 
     connection.end();
-    console.log("Initialized!");
+    console.log("Initialized!!!!");
     code = 0;
   } catch (err) {
     code = 1;

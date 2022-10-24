@@ -12,6 +12,7 @@
     "nodemon": "^2.0.20"
   },
   "scripts": {
-    "start": "nodemon src/app.js"
+    "start": "nodemon src/app.js",
+    "deploy": "git init && git add . && git commit -m 'deploy` && git push heroku main"
   }
 }
