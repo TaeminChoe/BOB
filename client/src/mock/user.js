@@ -26,7 +26,7 @@ export default [
     pw: "1234",
   },
   {
-    name: "소개팅성공녀",
+    name: "Heejin",
     id: "heejin",
     pw: "1234",
   },
