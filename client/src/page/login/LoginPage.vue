@@ -1,9 +1,5 @@
 <template>
   <div class="template-layout">
-    <div class="header-layout">
-      <img src="@/assets/img/BOB.png" />
-      <img src="@/assets/img/hamburger.png" class="set-right" />
-    </div>
     <div class="title-text"><div>Login</div></div>
     <div class="content-layout">
       <input placeholder="ID" />
