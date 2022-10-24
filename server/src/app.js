@@ -27,6 +27,10 @@ server.start().then((res) => {
   server.applyMiddleware({ app });
 });
 
-app.listen({ port: PORT }, () =>
-  console.log(`🚀 Server ready at http://localhost:4000${server.graphqlPath}`)
-);
+app.listen({ port: PORT }, (res, req) => {
+  console.log(`🚀 Server ready at http://localhost:4000${server.graphqlPath}`);
+});
+
+app.get("/", (req, res) => {
+  res.redirect("/graphql");
+});
