@@ -10,7 +10,9 @@
       <input placeholder="ID" />
       <input placeholder="Create Password" />
       <input placeholder="Check Password" />
-      <button class="bgcolor-green" @click="handleClickSignup">NEXT</button>
+      <button class="submit-button bgcolor-green" @click="handleClickSignup">
+        NEXT
+      </button>
     </div>
   </div>
 </template>

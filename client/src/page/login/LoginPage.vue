@@ -8,8 +8,10 @@
     <div class="content-layout">
       <input placeholder="ID" />
       <input placeholder="Password" />
-      <button class="bgcolor-green" @click="handleClickLogin">NEXT</button>
-      <button class="bgcolor-orange">REGISTER</button>
+      <button class="submit-button bgcolor-green" @click="handleClickLogin">
+        NEXT
+      </button>
+      <button class="submit-button bgcolor-orange">REGISTER</button>
     </div>
   </div>
 </template>

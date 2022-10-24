@@ -7,7 +7,9 @@
       <input placeholder="Number" />
       <input placeholder="IMG Link" />
       <input placeholder="Description" />
-      <button class="bgcolor-green" @click="handleAddList">SUBMIT</button>
+      <button class="submit-button bgcolor-green" @click="handleAddList">
+        SUBMIT
+      </button>
     </div>
   </div>
 </template>
