@@ -52,6 +52,11 @@ const routes = [
         isMenu: true,
       },
       {
+        path: "/addNotice",
+        name: "addNotice",
+        component: () => import("../page/notice/AddNoticePage"),
+      },
+      {
         path: "/my",
         name: "my",
         component: () => import("../page/my/MyPage"),
@@ -63,6 +68,12 @@ const routes = [
         name: "admin",
         component: () => import("../page/admin/AdminPage"),
         meta: { authorization: ["admin"] },
+        isMenu: true,
+      },
+      {
+        path: "/detail",
+        name: "detail",
+        component: () => import("../page/detail/DetailPage"),
         isMenu: true,
       },
     ],
