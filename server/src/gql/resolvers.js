@@ -55,7 +55,7 @@ const resolvers = {
       const result = await DBExecute(query);
 
       console.log(`Login ${!!result[0] ? "success" : "fail"}`);
-      return result[0];
+      return result[0][0];
     },
     getStoreByKey: async () => {},
     getNoticeByKey: async () => {},

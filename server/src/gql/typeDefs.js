@@ -14,11 +14,11 @@ const typeDefs = gql`
   }
 
   type User {
-    id: String!
-    m_date: String!
-    pw: String!
-    name: String!
-    auth: Auth!
+    id: String
+    m_date: String
+    pw: String
+    name: String
+    auth: Auth
   }
 
   input UserInput {
