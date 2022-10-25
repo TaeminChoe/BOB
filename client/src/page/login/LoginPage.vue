@@ -3,7 +3,7 @@
   <div class="content-layout">
     <input placeholder="ID" v-model="id" />
     <input placeholder="Password" v-model="pw" />
-    <button class="submit-button bgcolor-green" @click="handleClickLogin">
+    <button class="submit-button bgcolor-green" @click="handleClickLoginGql">
       NEXT
     </button>
     <button class="submit-button bgcolor-orange" @click="handleGoSignup">
@@ -16,6 +16,7 @@
 import "@/assets/css/layout.css";
 import UserData from "@/mock/user";
 import { setLoginLocalToken } from "@/helper/helper-storage";
+import { getAccountInfo } from "@/gql/service-api";
 export default {
   name: "LoginPage",
   data() {
@@ -25,6 +26,14 @@ export default {
     };
   },
   methods: {
+    /** GQL 로그인 */
+    handleClickLoginGql() {
+      const { id, pw } = this;
+      getAccountInfo({
+        id,
+        pw,
+      });
+    },
     /** To Do 양태욱: 해당 로그인 로직은 API 연동시 다시 구현해야됨 */
     handleClickLogin() {
       const { id, pw } = this;
