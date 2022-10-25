@@ -6,7 +6,22 @@ const typeDefs = gql`
     client
   }
 
+  type Response {
+    succeed: Boolean!
+    error: String!
+    code: Int!
+    message: String!
+  }
+
   type User {
+    id: String!
+    m_date: String!
+    pw: String!
+    name: String!
+    auth: Auth!
+  }
+
+  input UserInput {
     id: String!
     m_date: String!
     pw: String!
@@ -35,9 +50,18 @@ const typeDefs = gql`
     getStoreByKey: Store
     getNoticeAll: [Notice]
     getNoticeByKey: Notice
-    getUserAll: [User]
-    getUserByKey: User
+    login(id: String!, pw: String!): User
+  }
+
+  type Mutation {
+    signUp(input: UserInput!): Response
   }
 `;
 
 module.exports = typeDefs;
+
+/**
+ * USER : 회원가입, 로그인
+ * STORE : 조회(전체, detail), 등록, 삭제
+ * NOTICE : 조회(전체, detail), 등록, 삭제
+ */
