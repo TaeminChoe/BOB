@@ -35,6 +35,25 @@ const routes = [
         component: () => import("../page/signup/SignupPage.vue"),
       },
       {
+        path: "/restaurant",
+        name: "restaurant",
+        component: () => import("../page/list/ListPage"),
+        children: [
+          {
+            path: "detail",
+            name: "restaurant-detail",
+            component: () => import("../page/detail/DetailPage"),
+            children: [],
+          },
+          {
+            path: "add",
+            name: "restaurant-add",
+            component: () => import("../page//list/ListCreatePage"),
+            children: [],
+          },
+        ],
+      },
+      {
         path: "/list",
         name: "list",
         component: () => import("../page/list/ListPage"),

@@ -22,8 +22,8 @@ export default {
           imgNowSrc: require("@/assets/img/homeRed.png"),
         },
         {
-          name: "list",
-          route: "/list",
+          name: "restaurant",
+          route: "/restaurant",
           imgSrc: require("@/assets/img/list.png"),
           imgNowSrc: require("@/assets/img/listRed.png"),
         },
