@@ -1,14 +1,11 @@
 <template>
   <div class="template-layout">
-    <div class="back-header">
-      <img src="@/assets/img/Union.png" />
-    </div>
     <div class="title-text"><div>Login</div></div>
     <div class="submit-layout">
       <input placeholder="ID" v-model="id" />
       <input placeholder="Password" v-model="pw" />
-      <button class="bgcolor-green" @click="handleClickLogin">NEXT</button>
-      <button class="bgcolor-orange">REGISTER</button>
+      <button class="submit-button bgcolor-green" @click="handleClickLogin">NEXT</button>
+      <button class="submit-button bgcolor-orange">REGISTER</button>
     </div>
   </div>
 </template>

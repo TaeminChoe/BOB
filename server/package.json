@@ -5,11 +5,14 @@
   "license": "MIT",
   "dependencies": {
     "apollo-server-express": "^3.10.3",
+    "dotenv": "^16.0.3",
     "express": "^4.18.2",
     "graphql": "^16.6.0",
+    "mysql2": "^2.3.3",
     "nodemon": "^2.0.20"
   },
   "scripts": {
-    "start": "nodemon src/app.js"
+    "start": "nodemon src/app.js",
+    "deploy": "git init && git add . && git commit -m 'deploy` && git push heroku main"
   }
 }

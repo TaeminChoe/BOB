@@ -1,14 +1,28 @@
 <!-- 공통 : 헤더 컴포넌트입니다.-->
 <template>
-  <header class="header-container">
+  <div class="template-layout">
+    <div class="header-layout">
+      <router-link to="/home" class="logo-container">
+        <img src="@/assets/img/BOB.png" />
+      </router-link>
+      <img
+        @click="handleClickMenu"
+        src="@/assets/img/hamburger.png"
+        class="set-right"
+      />
+    </div>
+  </div>
+  <!-- <header class="header-container">
     <router-link to="/home" class="logo-container">
       <img src="https://www.pineone.com/images/logo.png" />
     </router-link>
     <div @click="handleClickMenu">햄버거로고</div>
-  </header>
+  </header> -->
 </template>
 
 <script>
+import "@/assets/css/layout.css";
+
 export default {
   name: "TemplateHeader",
   methods: {
@@ -20,7 +34,7 @@ export default {
 </script>
 
 <style>
-.header-container {
+/* .header-container {
   width: 100%;
   height: 75px;
   background-color: #415c82;
@@ -37,5 +51,5 @@ export default {
 
 .hamburger-container {
   font-size: 12px;
-}
+} */
 </style>

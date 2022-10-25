@@ -1,18 +1,6 @@
 import store from "@/store";
 import { createWebHistory, createRouter } from "vue-router";
 const routes = [
-  {
-    path: "/login",
-    name: "login",
-    meta: { authorization: [""] },
-    component: () => import("../page/login/LoginPage.vue"),
-  },
-  {
-    path: "/signup",
-    name: "signup",
-    meta: { authorization: [""] },
-    component: () => import("../page/signup/SignupPage.vue"),
-  },
   // Vue 3.x 버전의 not-found 설정
   {
     path: "/:pathMatch(.*)*",
@@ -35,10 +23,27 @@ const routes = [
         isMenu: true,
       },
       {
+        path: "/login",
+        name: "login",
+        meta: { authorization: [""] },
+        component: () => import("../page/login/LoginPage.vue"),
+      },
+      {
+        path: "/signup",
+        name: "signup",
+        meta: { authorization: [""] },
+        component: () => import("../page/signup/SignupPage.vue"),
+      },
+      {
         path: "/list",
         name: "list",
         component: () => import("../page/list/ListPage"),
         isMenu: true,
+      },
+      {
+        path: "/create",
+        name: "create",
+        component: () => import("../page/list/ListCreatePage"),
       },
       {
         path: "/notice",
