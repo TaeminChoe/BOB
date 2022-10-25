@@ -18,7 +18,7 @@ export default {
   methods: {
     handleAddList() {
       console.log("list 등록");
-      this.$router.push("/restaurant");
+      this.$router.push("/list");
     },
   },
 };

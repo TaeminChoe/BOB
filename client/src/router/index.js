@@ -54,6 +54,12 @@ const routes = [
         ],
       },
       {
+        path: "/list",
+        name: "list",
+        component: () => import("../page/list/ListPage"),
+        isMenu: true,
+      },
+      {
         path: "/create",
         name: "create",
         component: () => import("../page/list/ListCreatePage"),
