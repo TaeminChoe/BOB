@@ -21,19 +21,6 @@ body .bgcolor-mint {
   margin-left: auto;
 }
 
-.header-layout {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  padding-top: 2.5rem;
-}
-.header-layout img {
-  padding: 0.9rem;
-}
-.header-layout .set-right {
-  margin-left: auto;
-}
-
 .template-layout {
   display: flex;
   flex-flow: column;
