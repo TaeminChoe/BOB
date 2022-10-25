@@ -13,7 +13,6 @@
 </template>
 
 <script>
-import "@/assets/css/layout.css";
 import UserData from "../../mock/user";
 export default {
   name: "LoginPage",
