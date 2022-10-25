@@ -48,7 +48,7 @@ body .bgcolor-orange {
   width: 92.5%;
   display: flex;
   flex-flow: column;
-  padding-bottom: 4rem;
+  margin-bottom: 4rem;
 }
 .template-layout .content-layout input {
   width: calc(100% - 4px - 1rem);
