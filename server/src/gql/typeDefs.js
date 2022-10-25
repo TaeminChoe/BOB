@@ -46,11 +46,9 @@ const typeDefs = gql`
   }
 
   type Query {
-    getStoreAll: [Store]
-    getStoreByKey: Store
-    getNoticeAll: [Notice]
-    getNoticeByKey: Notice
     login(id: String!, pw: String!): User
+    stores: [Store]
+    notices: [Notice]
   }
 
   type Mutation {

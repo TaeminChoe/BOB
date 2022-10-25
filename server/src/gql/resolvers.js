@@ -1,3 +1,4 @@
+const { resolveObjMapThunk } = require("graphql");
 const { DBExecute } = require("../DBConfig");
 
 const ERRORS = [
@@ -34,49 +35,46 @@ const initError = () => {
 
 const resolvers = {
   Query: {
-    getStoreAll: async () => {
-      console.log("Get BOB stores ...");
-      const query = "SELECT * FROM STORE";
-      const result = await DBExecute(query);
-
-      return result;
-    },
-    getNoticeAll: async () => {
-      console.log("Get BOB notices ...");
-      const query = "SELECT * FROM NOTICE";
-      const result = await DBExecute(query);
-
-      return result;
-    },
-    // id, pw를 params값으로 받아 db에 조회하여 결과값 반환
+    // USER QUERY
     login: async (parent, args) => {
       console.log("BOB Login ...");
       const query = `SELECT * FROM USER WHERE id="${args.id}" && pw="${args.pw}"`;
       const result = await DBExecute(query);
 
-      console.log(`Login ${!!result[0] ? "success" : "fail"}`);
+      console.log(`Login ${result[0].length > 0 ? "success" : "fail"}`);
       return result[0][0];
     },
-    getStoreByKey: async () => {},
-    getNoticeByKey: async () => {},
+
+    // STORE QUERY
+    stores: async () => {
+      console.log("Get BOB stores ...");
+      const query = "SELECT * FROM STORE";
+      const result = await DBExecute(query);
+
+      return result[0];
+    },
+
+    // NOTICE QUERY
+    notices: async () => {
+      console.log("Get BOB notices ...");
+      const query = "SELECT * FROM NOTICE";
+      const result = await DBExecute(query);
+
+      return result[0];
+    },
   },
 
   Mutation: {
     signUp: async (parent, args) => {
-      let succeed;
-      let errors = initError();
       const { id, m_date, pw, name, auth } = args.input;
       const date = toStringByFormatting(new Date(m_date));
       const query = `INSERT INTO USER(id, m_date, pw, name, auth) VALUES ("${id}", "${date}", "${pw}", "${name}", "${auth}")`;
+      const result = await DBExecute(query);
 
-      try {
-        const result = await DBExecute(query);
-        succeed = true;
-        errors = {};
-      } catch (err) {
-        if ((errors = ERRORS.find((error) => error.error === err.code)));
-        succeed = false;
-      }
+      const succeed = !result.code;
+      const errors = !result.code
+        ? {}
+        : ERRORS.find((error) => error.error === result.code) || initError();
 
       return {
         succeed,

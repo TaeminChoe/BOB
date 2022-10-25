@@ -23,9 +23,17 @@ const info = {
 
 const DBExecute = async (query) => {
   console.log(`query: ${query}`);
-  const conn = await MySQL.createConnection(info);
-  const result = await conn.query(query);
-  await conn.end();
+  let result;
+
+  try {
+    const conn = await MySQL.createConnection(info);
+    result = await conn.query(query);
+    await conn.end();
+  } catch (err) {
+    console.error(err);
+    result = err;
+  }
+
   return result;
 };
 
