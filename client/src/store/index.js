@@ -6,15 +6,24 @@ export default createStore({
     menuOpen: false,
     modalOpen: false,
     auth: "",
+    accountInfo: null,
   },
   getters: {},
   mutations: {
+    // 모달 오픈
     setModalOpen(state, value) {
       state.modalOpen = value;
     },
+    // 권한 설정
     setAuth(state, value) {
       console.log("vuex-mutaion : setAuth", value);
       state.auth = value;
+    },
+    // 로그인
+    setAccounInfo(state, value) {
+      state.accountInfo = {
+        ...value,
+      };
     },
   },
 });

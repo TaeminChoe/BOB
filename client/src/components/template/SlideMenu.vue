@@ -5,9 +5,14 @@
     @openMenu="openMenu"
     @closeMenu="closeMenu"
   >
-    <div>
-      <h1>계정 정보 영역</h1>
-      <br />
+    <div class="account-info">
+      <router-link to="/login" v-if="!isLogined" class="no-account"
+        >로그인을 해주세요</router-link
+      >
+      <div v-if="isLogined" class="have-account">
+        <p class="account-name">{{ user.name }}</p>
+        <p class="account-id">{{ user.id }}</p>
+      </div>
     </div>
     <a id="home" href="#">
       <span>Home</span>
@@ -21,7 +26,9 @@
     <a id="test3" href="#">
       <span>test3</span>
     </a>
-    <div class="logout" @click="handleClickLogout">로그아웃</div>
+    <div v-if="isLogined" class="logout" @click="handleClickLogout">
+      로그아웃
+    </div>
   </Slide>
 </template>
 
@@ -32,6 +39,8 @@ export default {
   data() {
     return {
       isOpen: false,
+      isLogined: !!this.$store.state.accountInfo,
+      user: this.$store.state.accountInfo,
     };
   },
   methods: {
@@ -52,3 +61,23 @@ export default {
   },
 };
 </script>
+<style scoped>
+.account-info {
+  width: 250px;
+  padding: 0 0 20px 0;
+}
+
+.account-info .account-name {
+  font-size: 30px;
+  font-weight: bold;
+  color: white;
+}
+.account-info .account-id {
+  font-size: 24px;
+}
+
+.account-info .no-account {
+  font-weight: bold;
+  font-size: 26px;
+}
+</style>

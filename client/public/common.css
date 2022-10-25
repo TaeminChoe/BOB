@@ -4,3 +4,8 @@
 .bm-burger-button {
   display: none;
 }
+
+a:visited,
+a:link {
+  color: white;
+}
