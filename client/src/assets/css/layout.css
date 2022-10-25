@@ -3,9 +3,22 @@ body .bgcolor-green {
 }
 body .bgcolor-orange {
   background-color: #ff9551;
-
+}
 body .bgcolor-mint {
   background-color: #b9fff8;
+}
+
+.header-layout {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding-top: 2.5rem;
+}
+.header-layout img {
+  padding: 0.9rem;
+}
+.header-layout .set-right {
+  margin-left: auto;
 }
 
 .header-layout {
