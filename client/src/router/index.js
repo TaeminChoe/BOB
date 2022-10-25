@@ -55,6 +55,7 @@ const routes = [
         path: "/my",
         name: "my",
         component: () => import("../page/my/MyPage"),
+        meta: { authorization: ["client", "admin"] },
         isMenu: true,
       },
       {
@@ -94,6 +95,11 @@ router.beforeEach((to, from, next) => {
         "CASE 2-1. 로그인 상태에서 비회원 전용 화면 진입(로그인, 회원가입) : 홈으로 이동"
       );
       next("/home");
+    }
+    // CASE 2-2. 미로그인 상태에서 로근 전용 화면 진입
+    else if (allowAuths.includes("client") && allowAuths.includes("admin")) {
+      console.error("CASE 2-2. 미로그인 상태에서 로근 전용 화면 진입");
+      next("/login");
     }
     // CASE 2-2. 그 외 기타 등등 모든 잘못된 접근
     else {

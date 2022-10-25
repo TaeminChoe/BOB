@@ -15,8 +15,6 @@
 </template>
 
 <script>
-import "@/assets/css/layout.css";
-
 export default {
   name: "ListCreatePage",
   methods: {

@@ -1,17 +1,18 @@
 <template>
   <div class="template-layout">
     <div class="title-text"><div>Login</div></div>
-    <div class="submit-layout">
+    <div class="content-layout">
       <input placeholder="ID" v-model="id" />
       <input placeholder="Password" v-model="pw" />
-      <button class="submit-button bgcolor-green" @click="handleClickLogin">NEXT</button>
+      <button class="submit-button bgcolor-green" @click="handleClickLogin">
+        NEXT
+      </button>
       <button class="submit-button bgcolor-orange">REGISTER</button>
     </div>
   </div>
 </template>
 
 <script>
-import "@/assets/css/layout.css";
 import UserData from "../../mock/user";
 export default {
   name: "LoginPage",
