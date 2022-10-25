@@ -35,6 +35,25 @@ const routes = [
         component: () => import("../page/signup/SignupPage.vue"),
       },
       {
+        path: "/restaurant",
+        name: "restaurant",
+        component: () => import("../page/list/ListPage"),
+        children: [
+          {
+            path: "detail",
+            name: "restaurant-detail",
+            component: () => import("../page/detail/DetailPage"),
+            children: [],
+          },
+          {
+            path: "add",
+            name: "restaurant-add",
+            component: () => import("../page//list/ListCreatePage"),
+            children: [],
+          },
+        ],
+      },
+      {
         path: "/list",
         name: "list",
         component: () => import("../page/list/ListPage"),
@@ -52,9 +71,15 @@ const routes = [
         isMenu: true,
       },
       {
+        path: "/addNotice",
+        name: "addNotice",
+        component: () => import("../page/notice/AddNoticePage"),
+      },
+      {
         path: "/my",
         name: "my",
         component: () => import("../page/my/MyPage"),
+        meta: { authorization: ["client", "admin"] },
         isMenu: true,
       },
       {
@@ -62,6 +87,12 @@ const routes = [
         name: "admin",
         component: () => import("../page/admin/AdminPage"),
         meta: { authorization: ["admin"] },
+        isMenu: true,
+      },
+      {
+        path: "/detail",
+        name: "detail",
+        component: () => import("../page/detail/DetailPage"),
         isMenu: true,
       },
     ],
@@ -94,6 +125,11 @@ router.beforeEach((to, from, next) => {
         "CASE 2-1. 로그인 상태에서 비회원 전용 화면 진입(로그인, 회원가입) : 홈으로 이동"
       );
       next("/home");
+    }
+    // CASE 2-2. 미로그인 상태에서 로근 전용 화면 진입
+    else if (allowAuths.includes("client") && allowAuths.includes("admin")) {
+      console.error("CASE 2-2. 미로그인 상태에서 로근 전용 화면 진입");
+      next("/login");
     }
     // CASE 2-2. 그 외 기타 등등 모든 잘못된 접근
     else {

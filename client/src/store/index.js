@@ -20,10 +20,8 @@ export default createStore({
       state.auth = value;
     },
     // 로그인
-    setAccounInfo(state, value) {
-      state.accountInfo = {
-        ...value,
-      };
+    setAccountInfo(state, value) {
+      state.accountInfo = value;
     },
   },
 });

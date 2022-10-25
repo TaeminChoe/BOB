@@ -1,15 +1,10 @@
 <template>
-  <Slide
-    right
-    :isOpen="this.$store.state.menuOpen"
-    @openMenu="openMenu"
-    @closeMenu="closeMenu"
-  >
+  <Slide right :isOpen="isOpen" @openMenu="openMenu" @closeMenu="closeMenu">
     <div class="account-info">
       <router-link to="/login" v-if="!isLogined" class="no-account"
         >로그인을 해주세요</router-link
       >
-      <div v-if="isLogined" class="have-account">
+      <div v-if="isLogined" @click="handleClickUserInfo" class="have-account">
         <p class="account-name">{{ user.name }}</p>
         <p class="account-id">{{ user.id }}</p>
       </div>
@@ -34,14 +29,19 @@
 
 <script>
 import { Slide } from "vue3-burger-menu";
+import { removeLoginLocalToken } from "@/helper/helper-storage";
 export default {
   name: "SlideMenu",
-  data() {
-    return {
-      isOpen: false,
-      isLogined: !!this.$store.state.accountInfo,
-      user: this.$store.state.accountInfo,
-    };
+  computed: {
+    isOpen() {
+      return this.$store.state.menuOpen;
+    },
+    isLogined() {
+      return !!this.$store.state.accountInfo;
+    },
+    user() {
+      return this.$store.state.accountInfo;
+    },
   },
   methods: {
     openMenu() {
@@ -50,9 +50,14 @@ export default {
     closeMenu() {
       this.$store.state.menuOpen = false;
     },
+    handleClickUserInfo() {
+      this.$router.push("/my");
+    },
     handleClickLogout() {
       this.$store.commit("setAuth", "");
+      this.$store.commit("setAccountInfo", null);
       this.$store.state.menuOpen = false;
+      removeLoginLocalToken();
       this.$router.push("/login");
     },
   },

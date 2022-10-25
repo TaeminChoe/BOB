@@ -2,7 +2,7 @@
   <div>
     <Header />
     <SlideMenu />
-    <div class="content-container">
+    <div class="template-layout">
       <router-view />
     </div>
     <Navigation />
@@ -23,11 +23,8 @@ export default {
   mounted() {
     if (this.$route.path === "/") this.$router.replace("/home");
   },
+  updated() {
+    if (this.$route.path === "/") this.$router.replace("/home");
+  },
 };
 </script>
-
-<style scoped>
-.content-container {
-  min-height: 80vh;
-}
-</style>

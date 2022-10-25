@@ -1,16 +1,14 @@
 <template>
-  <div class="template-layout">
-    <div class="title-text"><div>Restaurant</div></div>
-    <div class="content-layout">
-      <input placeholder="Title" />
-      <input placeholder="Address" />
-      <input placeholder="Number" />
-      <input placeholder="IMG Link" />
-      <input placeholder="Description" />
-      <button class="submit-button bgcolor-green" @click="handleAddList">
-        SUBMIT
-      </button>
-    </div>
+  <div class="title-text"><div>Restaurant</div></div>
+  <div class="content-layout">
+    <input placeholder="Title" />
+    <input placeholder="Address" />
+    <input placeholder="Number" />
+    <input placeholder="IMG Link" />
+    <input placeholder="Description" />
+    <button class="submit-button bgcolor-green" @click="handleAddList">
+      SUBMIT
+    </button>
   </div>
 </template>
 
