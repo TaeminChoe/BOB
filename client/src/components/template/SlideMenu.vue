@@ -1,11 +1,7 @@
 <template>
-  <Slide
-    right
-    :isOpen="this.$store.state.menuOpen"
-    @openMenu="openMenu"
-    @closeMenu="closeMenu"
-  >
+  <Slide right :isOpen="isOpen" @openMenu="openMenu" @closeMenu="closeMenu">
     <div class="account-info">
+      {{ userComputed }}
       <router-link to="/login" v-if="!isLogined" class="no-account"
         >로그인을 해주세요</router-link
       >
@@ -36,12 +32,16 @@
 import { Slide } from "vue3-burger-menu";
 export default {
   name: "SlideMenu",
-  data() {
-    return {
-      isOpen: false,
-      isLogined: !!this.$store.state.accountInfo,
-      user: this.$store.state.accountInfo,
-    };
+  computed: {
+    isOpen() {
+      return this.$store.state.menuOpen;
+    },
+    isLogined() {
+      return !!this.$store.state.accountInfo;
+    },
+    user() {
+      return this.$store.state.accountInfo;
+    },
   },
   methods: {
     openMenu() {

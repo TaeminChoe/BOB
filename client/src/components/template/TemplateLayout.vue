@@ -20,7 +20,7 @@ export default {
     Navigation,
     SlideMenu,
   },
-  mounted() {
+  updated() {
     if (this.$route.path === "/") this.$router.replace("/home");
   },
 };
