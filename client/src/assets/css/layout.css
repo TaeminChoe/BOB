@@ -145,6 +145,30 @@ body .bgcolor-orange {
   font-weight: 400;
   font-size: 0.8rem;
 }
+.template-layout .content-layout .main-box .detail-box {
+  font-family: "Roboto";
+  font-style: normal;
+  width: calc(100% - 1rem);
+  padding: 1.3rem 0.5rem 0 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.template-layout .content-layout .main-box .detail-box .detail-title {
+  font-weight: 700;
+  font-size: 1rem;
+}
+.template-layout .content-layout .main-box .detail-box .icon-img {
+  padding: 0.3rem;
+}
+.template-layout .content-layout .discription-box {
+  width: calc(100% -1rem);
+  display: flex;
+  flex-flow: column;
+  padding: 0.5rem;
+  padding-bottom: 1.5rem;
+  font-size: 0.9rem;
+}
 
 .footer-container {
   position: fixed;

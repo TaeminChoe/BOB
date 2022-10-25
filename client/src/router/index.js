@@ -65,6 +65,12 @@ const routes = [
         meta: { authorization: ["admin"] },
         isMenu: true,
       },
+      {
+        path: "/detail",
+        name: "detail",
+        component: () => import("../page/detail/DetailPage"),
+        isMenu: true,
+      },
     ],
   },
 ];
