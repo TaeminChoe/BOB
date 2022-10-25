@@ -52,6 +52,11 @@ const routes = [
         isMenu: true,
       },
       {
+        path: "/addNotice",
+        name: "addNotice",
+        component: () => import("../page/notice/AddNoticePage"),
+      },
+      {
         path: "/my",
         name: "my",
         component: () => import("../page/my/MyPage"),

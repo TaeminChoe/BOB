@@ -1,11 +1,19 @@
 <template>
-  <router-view />
+  <div>
+    <div v-if="isOpen" class="prevent-click"></div>
+    <router-view />
+  </div>
 </template>
 
 <script>
 import { getLoginLocalToken } from "@/helper/helper-storage";
 export default {
   name: "App",
+  computed: {
+    isOpen() {
+      return this.$store.state.menuOpen;
+    },
+  },
 
   /**
    * 앱 구동시 로그인 정보 조회
@@ -13,6 +21,7 @@ export default {
    * */
   mounted() {
     const user = getLoginLocalToken();
+
     if (user) {
       this.$store.commit("setAuth", user.auth ? user.auth : "client");
       this.$store.commit("setAccountInfo", user);
@@ -21,4 +30,14 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+.prevent-click {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 100;
+}
+</style>

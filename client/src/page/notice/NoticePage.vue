@@ -1,13 +1,13 @@
 <template>
-  <div class="template-layout">
-    <div class="title-text">Notice</div>
-    <div class="noNoticeWrap">
-      <img src="@/assets/img/noGreen.png" />
-      <div class="noNotice">No notices</div>
-    </div>
-
-    <NoticeList />
+  <div class="title-text">
+    <div>Notice</div>
+    <button class="bgcolor-orange" @click="addNotice">Register</button>
   </div>
+  <div class="noNoticeWrap">
+    <img src="@/assets/img/noGreen.png" />
+    <div class="noNotice">No notices</div>
+  </div>
+  <NoticeList />
 </template>
 <script>
 import "@/assets/css/layout.css";
@@ -17,6 +17,11 @@ export default {
   name: "NoticePage",
   components: {
     NoticeList,
+  },
+  methods: {
+    addNotice() {
+      this.$router.push("/addNotice");
+    },
   },
 };
 </script>
