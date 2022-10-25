@@ -1,5 +1,8 @@
 <template>
   <div class="content-layout">
+    <button class="deleteBtn">
+      <img src="@/assets/img/trash.png" />
+    </button>
     <div class="accordion-div">
       <div class="btnWrap">
         <button @click="toggle" class="toggleBtn">
@@ -72,5 +75,14 @@ export default {
 }
 .content-layout {
   padding-bottom: 1rem !important;
+}
+.deleteBtn {
+  background: none;
+  border: none;
+  width: 30px;
+  height: 30px;
+  margin-left: 10px;
+  padding-top: 20px;
+  z-index: 10;
 }
 </style>
