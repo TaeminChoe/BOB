@@ -1,9 +1,9 @@
 <template>
-  <div class="wrapper">
+  <div class="content-layout">
     <div class="accordion-div">
       <div class="btnWrap">
         <button @click="toggle" class="toggleBtn">
-          {{ isActive ? "⬆️" : "⬇️" }}
+          <img :src="isActive ? openList : closeList" />
         </button>
       </div>
       <transition
@@ -28,6 +28,8 @@ export default {
   data() {
     return {
       isActive: false,
+      openList: require("@/assets/img/open.png"),
+      closeList: require("@/assets/img/close.png"),
     };
   },
   methods: {
@@ -55,8 +57,9 @@ export default {
 
 <style>
 .accordion-div {
-  padding: 20px;
   border: 1px solid black;
+  border-radius: 8px;
+  padding: 1rem;
 }
 .btnWrap {
   display: flex;
@@ -66,5 +69,8 @@ export default {
 .toggleBtn {
   background: none;
   border: none;
+}
+.content-layout {
+  padding-bottom: 1rem !important;
 }
 </style>
