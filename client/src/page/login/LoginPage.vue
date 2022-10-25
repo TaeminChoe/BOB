@@ -7,7 +7,9 @@
       <button class="submit-button bgcolor-green" @click="handleClickLogin">
         NEXT
       </button>
-      <button class="submit-button bgcolor-orange">REGISTER</button>
+      <button class="submit-button bgcolor-orange" @click="handleGoSignup">
+        REGISTER
+      </button>
     </div>
   </div>
 </template>
@@ -45,8 +47,11 @@ export default {
         this.$store.commit("setAccounInfo", {
           ...user,
         });
-        this.$router.push("/");
+        this.$router.push("/home");
       }
+    },
+    handleGoSignup() {
+      this.$router.push("signup");
     },
   },
 };
