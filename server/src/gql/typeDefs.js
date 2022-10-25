@@ -8,9 +8,9 @@ const typeDefs = gql`
 
   type Response {
     succeed: Boolean!
-    error: String!
-    code: Int!
-    message: String!
+    error: String
+    code: Int
+    message: String
   }
 
   type User {

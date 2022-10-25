@@ -63,23 +63,23 @@ const resolvers = {
 
   Mutation: {
     signUp: async (parent, args) => {
-      let result;
+      let succeed;
       let errors = initError();
-      console.log(args);
-      const { id, m_date, pw, name, auth } = args;
+      const { id, m_date, pw, name, auth } = args.input;
       const date = toStringByFormatting(new Date(m_date));
       const query = `INSERT INTO USER(id, m_date, pw, name, auth) VALUES ("${id}", "${date}", "${pw}", "${name}", "${auth}")`;
 
       try {
         const result = await DBExecute(query);
-        result = true;
+        succeed = true;
+        errors = {};
       } catch (err) {
-        errors = ERRORS.find((error) => error.name === err.code);
-        result = false;
+        if ((errors = ERRORS.find((error) => error.error === err.code)));
+        succeed = false;
       }
 
       return {
-        succeed: result,
+        succeed,
         ...errors,
       };
     },
