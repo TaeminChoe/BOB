@@ -24,24 +24,3 @@ export default {
   },
 };
 </script>
-
-<style>
-/* .header-container {
-  width: 100%;
-  height: 75px;
-  background-color: #415c82;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  color: white;
-  font-size: 22px;
-}
-
-.header-container .logo-container {
-  margin-left: 20px;
-}
-
-.hamburger-container {
-  font-size: 12px;
-} */
-</style>
