@@ -2,7 +2,7 @@
   <div>
     <Header />
     <SlideMenu />
-    <div class="content-container">
+    <div class="template-layout">
       <router-view />
     </div>
     <Navigation />
@@ -28,9 +28,3 @@ export default {
   },
 };
 </script>
-
-<style scoped>
-.content-container {
-  min-height: 80vh;
-}
-</style>

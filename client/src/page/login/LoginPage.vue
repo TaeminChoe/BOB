@@ -1,16 +1,14 @@
 <template>
-  <div class="template-layout">
-    <div class="title-text"><div>Login</div></div>
-    <div class="content-layout">
-      <input placeholder="ID" v-model="id" />
-      <input placeholder="Password" v-model="pw" />
-      <button class="submit-button bgcolor-green" @click="handleClickLogin">
-        NEXT
-      </button>
-      <button class="submit-button bgcolor-orange" @click="handleGoSignup">
-        REGISTER
-      </button>
-    </div>
+  <div class="title-text"><div>Login</div></div>
+  <div class="content-layout">
+    <input placeholder="ID" v-model="id" />
+    <input placeholder="Password" v-model="pw" />
+    <button class="submit-button bgcolor-green" @click="handleClickLogin">
+      NEXT
+    </button>
+    <button class="submit-button bgcolor-orange" @click="handleGoSignup">
+      REGISTER
+    </button>
   </div>
 </template>
 
@@ -51,7 +49,6 @@ export default {
         // To Do 양태욱 : 현재는 토큰이 없기에 유저 정보를 모두 넘기지만 추후에는 토큰 값으로 수정해야됨
         setLoginLocalToken(user);
         this.$router.push("/");
-
       }
     },
     handleGoSignup() {

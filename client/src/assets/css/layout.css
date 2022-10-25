@@ -5,23 +5,24 @@ body .bgcolor-orange {
   background-color: #ff9551;
 }
 
-.template-layout {
-  display: flex;
-  flex-flow: column;
-  align-items: center;
-  justify-content: center;
-}
-.template-layout .header-layout {
+.header-layout {
   width: 100%;
   display: flex;
   align-items: center;
   padding-top: 2.5rem;
 }
-.template-layout .header-layout img {
+.header-layout img {
   padding: 0.9rem;
 }
-.template-layout .header-layout .set-right {
+.header-layout .set-right {
   margin-left: auto;
+}
+
+.template-layout {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
 }
 .template-layout .title-text {
   width: calc(100% - 2rem);
