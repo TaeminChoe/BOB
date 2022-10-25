@@ -1,6 +1,12 @@
-const notice = require("../db/notice.json");
-const store = require("../db/store.json");
-const user = require("../db/user.json");
+const notice = require("../../data/notice.json");
+const store = require("../../data/store.json");
+const user = require("../../data/user.json");
+
+/**
+ * 더미 데이터를 db에 넣기 위한 임시 함수들입니다.
+ * 이후 삭제될 예정입니다.
+ * json파일의 데이터를 가져와 SQL로 변환하여 DB에 넣는 코드입니다.
+ */
 
 function leftPad(value) {
   if (value >= 10) {
