@@ -1,4 +1,9 @@
 const MySQL = require("mysql2");
+const {
+  getUserInsertQuery,
+  getStoreInsertQuery,
+  getNoticeInsertQuery,
+} = require("./dataInput");
 require("dotenv").config();
 
 const {
@@ -26,8 +31,10 @@ const DBConfig = async () => {
   let conn, code;
   try {
     connection.connect();
-    // connection.query(`SELECT DATABASE()`, (err, rows, fields) => {
-    connection.query(`SELECT * FROM USER`, (err, rows, fields) => {
+    // const query = getUserInsertQuery();
+    // console.log(query);
+    connection.query(`SHOW TABLES`, (err, rows, fields) => {
+      // connection.query(query, (err, rows, fields) => {
       if (!err) console.log("The solution is: ", rows);
       else console.log("Error while performing query.", err);
     });
