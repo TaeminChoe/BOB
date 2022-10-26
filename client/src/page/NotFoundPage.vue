@@ -1,9 +1,13 @@
 <template>
-  <div>
-    <h1>404 Not Found</h1>
-    찾을 수 없는 페이지 입니다
+  <div class="notfound-layout">
+    <img class="notfound-img" src="@/assets/img/noOrange.png" />
+    <div class="notfound-text">
+      <div>NO PAGE</div>
+    </div>
   </div>
 </template>
 <script>
-export default {};
+export default {
+  name: "NotFoundPage",
+};
 </script>

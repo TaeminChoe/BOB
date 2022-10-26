@@ -276,3 +276,19 @@ body {
   z-index: 1000 !important;
   background-color: rgba(255, 255, 255, 0.6) !important;
 }
+
+.notfound-layout {
+  width: 100%;
+  height: 71vh;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  .notfound-text {
+    padding: 1rem;
+    color: #ff9551;
+    font-size: 2.5rem;
+    font-weight: 400;
+    font-family: "Roboto", sans-serif;
+  }
+}

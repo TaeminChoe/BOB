@@ -6,11 +6,7 @@ const routes = [
     path: "/:pathMatch(.*)*",
     redirect: "/not-found",
   },
-  {
-    path: "/not-found",
-    name: "not-found",
-    component: () => import("../page/NotFoundPage"),
-  },
+
   {
     path: "/",
     name: "template",
@@ -21,6 +17,11 @@ const routes = [
         name: "home",
         component: () => import("../page/home/HomePage"),
         isMenu: true,
+      },
+      {
+        path: "/not-found",
+        name: "not-found",
+        component: () => import("../page/NotFoundPage"),
       },
       {
         path: "/login",
