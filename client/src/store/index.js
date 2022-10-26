@@ -5,6 +5,7 @@ export default createStore({
   state: {
     menuOpen: false,
     modalOpen: false,
+    loadingOpen: false,
     auth: "",
     accountInfo: null,
   },
@@ -13,6 +14,10 @@ export default createStore({
     // 모달 오픈
     setModalOpen(state, value) {
       state.modalOpen = value;
+    },
+    // 로딩 오픈
+    setLoadingOpen(state, value) {
+      state.loadingOpen = value;
     },
     // 권한 설정
     setAuth(state, value) {

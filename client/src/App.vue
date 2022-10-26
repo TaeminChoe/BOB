@@ -1,18 +1,27 @@
 <template>
   <div>
-    <div v-if="isOpen" class="prevent-click"></div>
+    <div v-if="backgroundOpen" class="prevent-click"></div>
+    <LoadingWrap v-if="loadingOpen" />
     <router-view />
   </div>
 </template>
 
 <script>
 import { getLoginLocalToken } from "@/helper/helper-storage";
+import LoadingWrap from "@/components/common/LoadingWrap.vue";
 export default {
   name: "App",
   computed: {
-    isOpen() {
-      return this.$store.state.menuOpen;
+    backgroundOpen() {
+      // 슬라이드 메뉴 Or API 연동시 로딩바와 함께 백그라운드 처리 오픈
+      return this.$store.state.menuOpen || this.$store.state.loadingOpen;
     },
+    loadingOpen() {
+      return this.$store.state.loadingOpen;
+    },
+  },
+  components: {
+    LoadingWrap,
   },
 
   /**
@@ -38,6 +47,6 @@ export default {
   width: 100vw;
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.6);
-  z-index: 100;
+  z-index: 10000;
 }
 </style>
