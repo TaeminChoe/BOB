@@ -14,6 +14,7 @@
     <div class="list-box">
       <img
         class="trash-btn"
+        v-if="$store.state.auth == 'client'"
         src="@/assets/img/trash.png"
         @click="handleDelList"
       />
@@ -31,6 +32,7 @@
     <div class="list-box">
       <img
         class="trash-btn"
+        v-if="$store.state.auth == 'client'"
         src="@/assets/img/trash.png"
         @click="handleDelList"
       />
@@ -48,6 +50,7 @@
     <div class="list-box">
       <img
         class="trash-btn"
+        v-if="$store.state.auth == 'client'"
         src="@/assets/img/trash.png"
         @click="handleDelList"
       />
