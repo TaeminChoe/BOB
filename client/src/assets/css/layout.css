@@ -105,6 +105,7 @@ body .bgcolor-mint {
   width: 50%;
 }
 .template-layout .content-layout .list-box .text-box .list-title {
+  width: calc(100% - 1rem);
   height: calc(50% - 1rem);
   padding: 0.5rem;
   font-weight: 700;

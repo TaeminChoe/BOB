@@ -25,8 +25,10 @@
         />
       </div>
       <div class="text-box">
-        <div class="list-title">레스토랑 이름영역입니다</div>
-        <div class="list-discription">레스토랑 설명영역입니다</div>
+        <div class="list-title">
+          {{ titleSubstring }}
+        </div>
+        <div class="list-discription">{{ disSubstring }}</div>
       </div>
     </div>
     <div class="list-box">
@@ -71,10 +73,32 @@
 <script>
 export default {
   name: "ListPage",
+  data: function () {
+    return {
+      titleStr:
+        "Restaurant Title 세줄이상 말줄임 적용 테스트 입니다dlqslslsekskeksdflsdlkfsdkl",
+      disStr:
+        "레스토랑 설명영역 말줄임 적용 테스트 입니다dlqslslsekskeksdflsdlkfsdkl레스토랑 설명영역 말줄임 적용 테스트 입니다dlqslslsekskeksdflsdlkfsdkl레스토랑 설명영역 말줄임 적용 테스트 입니다dlqslslsekskeksdflsdlkfsdkl레스토랑 설명영역 말줄임 적용 테스트 입니다dlqslslsekskeksdflsdlkfsdkl",
+    };
+  },
   computed: {
     /** 현재 경로가 List 화면인지 확인 */
     isList() {
       return this.$route.matched.at(-1).path === "/restaurant";
+    },
+    titleSubstring: function () {
+      let maxLength = 30;
+      if (this.titleStr.length < maxLength) {
+        return this.titleStr;
+      }
+      return this.titleStr.substring(0, maxLength) + "...";
+    },
+    disSubstring: function () {
+      let maxLength = 120;
+      if (this.disStr.length < maxLength) {
+        return this.disStr;
+      }
+      return this.disStr.substring(0, maxLength) + "...";
     },
   },
   methods: {
