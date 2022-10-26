@@ -1,39 +1,20 @@
 <template>
   <div class="accordion">
-    <p class="noticeTitle">TITLE TITLE TITLE TITLE</p>
+    <p :class="this.isActive ? 'noticeTitle' : 'noticeTitleHide'">
+      {{ list.title }}
+    </p>
     <p :class="this.isActive ? 'noticeDesc' : 'noticeDescHide'">
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam et
-      doloribus porro voluptatum? Earum eaque aut incidunt ducimus, eum in
-      nostrum numquam tenetur odio voluptas deserunt, quas dolorum mollitia
-      officia? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam
-      et doloribus porro voluptatum? Earum eaque aut incidunt ducimus, eum in
-      nostrum numquam tenetur odio voluptas deserunt, quas dolorum mollitia
-      officia? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam
-      et doloribus porro voluptatum? Earum eaque aut incidunt ducimus, eum in
-      nostrum numquam tenetur odio voluptas deserunt, quas dolorum mollitia
-      officia? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam
-      et doloribus porro voluptatum? Earum eaque aut incidunt ducimus, eum in
-      nostrum numquam tenetur odio voluptas deserunt, quas dolorum mollitia
-      officia? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam
-      et doloribus porro voluptatum? Earum eaque aut incidunt ducimus, eum in
-      nostrum numquam tenetur odio voluptas deserunt, quas dolorum mollitia
-      officia? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam
-      et doloribus porro voluptatum? Earum eaque aut incidunt ducimus, eum in
-      nostrum numquam tenetur odio voluptas deserunt, quas dolorum mollitia
-      officia? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam
-      et doloribus porro voluptatum? Earum eaque aut incidunt ducimus, eum in
-      nostrum numquam tenetur odio voluptas deserunt, quas dolorum mollitia
-      officia? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam
-      et doloribus porro voluptatum? Earum eaque aut incidunt ducimus, eum in
-      nostrum numquam tenetur odio voluptas deserunt, quas dolorum mollitia
-      officia?
+      {{ list.desc }}
     </p>
   </div>
 </template>
 
 <script>
 export default {
-  props: ["isActive"],
+  props: {
+    isActive: Boolean,
+    list: Object,
+  },
 };
 </script>
 
@@ -43,6 +24,13 @@ export default {
 }
 .noticeTitle {
   font-weight: bold;
+  margin-bottom: 1rem;
+}
+.noticeTitleHide {
+  font-weight: bold;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .noticeDescHide {
   display: none;

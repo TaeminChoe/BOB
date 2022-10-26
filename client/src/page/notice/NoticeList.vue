@@ -1,7 +1,10 @@
 <template>
   <div class="content-layout">
-    <button class="deleteBtn">
-      <img src="@/assets/img/trash.png" />
+    <button class="deleteBtn" @click="deleteNotice">
+      <img
+        v-if="this.$store.state.auth === 'admin'"
+        src="@/assets/img/trash.png"
+      />
     </button>
     <div class="accordion-div">
       <div class="btnWrap">
@@ -17,7 +20,7 @@
         v-on:leave="leave"
         class="accordion"
       >
-        <NoticeDetail v-bind:isActive="isActive" />
+        <NoticeDetail v-bind:isActive="isActive" v-bind:list="list" />
       </transition>
     </div>
   </div>
@@ -28,6 +31,9 @@ import NoticeDetail from "./NoticeDetail.vue";
 
 export default {
   name: "NoticeList",
+  props: {
+    list: Object,
+  },
   data() {
     return {
       isActive: false,
@@ -50,6 +56,9 @@ export default {
     },
     leave: function (el) {
       el.style.height = "0";
+    },
+    deleteNotice() {
+      console.log("삭제 버튼 클릭");
     },
   },
   components: {
@@ -74,7 +83,7 @@ export default {
   border: none;
 }
 .content-layout {
-  padding-bottom: 1rem !important;
+  margin-bottom: 0.3rem !important;
 }
 .deleteBtn {
   background: none;
