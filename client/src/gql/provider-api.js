@@ -30,7 +30,6 @@ const authMiddleware = new ApolloLink((operation, forward) => {
 
   return forward(operation).map((data) => {
     // API 응답 후 처리
-    console.log("resutl ? ", data);
     return data;
   });
 });

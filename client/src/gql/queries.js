@@ -4,7 +4,7 @@ export const LOGIN = gql`
   query Login($id: String!, $pw: String!) {
     login(id: $id, pw: $pw) {
       id
-      m_date
+      date
       pw
       name
       auth
