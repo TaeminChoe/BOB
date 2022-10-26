@@ -19,7 +19,7 @@ export default {
       return (
         this.$store.state.menuOpen ||
         this.$store.state.loadingOpen ||
-        this.$store.state.modal.Open
+        this.$store.state.modal.open
       );
     },
     loadingOpen() {
