@@ -1,73 +1,39 @@
 <template>
   <router-view v-if="!isList" />
-  <div v-if="isList" class="title-text">
-    <div>Restaurant</div>
-    <button
-      v-if="$store.state.auth == 'client'"
-      class="bgcolor-orange"
-      @click="handleAddList"
-    >
-      ADD LIST
-    </button>
-  </div>
-  <div class="content-layout">
-    <div class="list-box">
-      <img
-        class="trash-btn"
-        v-if="$store.state.auth == 'client'"
-        src="@/assets/img/trash.png"
-        @click="handleDelList"
-      />
-      <div class="img-box">
+  <slot v-else>
+    <div class="title-text">
+      <div>Restaurant</div>
+      <button
+        v-if="$store.state.auth == 'admin'"
+        class="bgcolor-orange"
+        @click="handleAddList"
+      >
+        ADD LIST
+      </button>
+    </div>
+    <div class="content-layout">
+      <div class="list-box" @click="handleGoDetail">
         <img
-          class="list-img"
-          src="https://cdn.pixabay.com/photo/2014/11/05/15/57/salmon-518032__480.jpg"
+          class="trash-btn"
+          v-if="$store.state.auth == 'admin'"
+          src="@/assets/img/trash.png"
+          @click="handleDelList"
         />
-      </div>
-      <div class="text-box">
-        <div class="list-title">
-          {{ titleSubstring }}
+        <div class="img-box">
+          <img
+            class="list-img"
+            src="https://cdn.pixabay.com/photo/2014/11/05/15/57/salmon-518032__480.jpg"
+          />
         </div>
-        <div class="list-discription">{{ disSubstring }}</div>
+        <div class="text-box">
+          <div class="list-title">
+            {{ titleSubstring }}
+          </div>
+          <div class="list-discription">{{ disSubstring }}</div>
+        </div>
       </div>
     </div>
-    <div class="list-box">
-      <img
-        class="trash-btn"
-        v-if="$store.state.auth == 'client'"
-        src="@/assets/img/trash.png"
-        @click="handleDelList"
-      />
-      <div class="img-box">
-        <img
-          class="list-img"
-          src="https://cdn.pixabay.com/photo/2014/11/05/15/57/salmon-518032__480.jpg"
-        />
-      </div>
-      <div class="text-box">
-        <div class="list-title">레스토랑 이름2</div>
-        <div class="list-discription">레스토랑 설명2</div>
-      </div>
-    </div>
-    <div class="list-box">
-      <img
-        class="trash-btn"
-        v-if="$store.state.auth == 'client'"
-        src="@/assets/img/trash.png"
-        @click="handleDelList"
-      />
-      <div class="img-box">
-        <img
-          class="list-img"
-          src="https://cdn.pixabay.com/photo/2014/11/05/15/57/salmon-518032__480.jpg"
-        />
-      </div>
-      <div class="text-box">
-        <div class="list-title">레스토랑 이름3</div>
-        <div class="list-discription">레스토랑 설명3</div>
-      </div>
-    </div>
-  </div>
+  </slot>
 </template>
 
 <script>
@@ -84,6 +50,7 @@ export default {
   computed: {
     /** 현재 경로가 List 화면인지 확인 */
     isList() {
+      console.log(this.$route.matched.at(-1).path === "/restaurant");
       return this.$route.matched.at(-1).path === "/restaurant";
     },
     titleSubstring: function () {
@@ -103,10 +70,13 @@ export default {
   },
   methods: {
     handleAddList() {
-      this.$router.push("/create");
+      this.$router.push("restaurant/add");
     },
     handleDelList(e) {
       console.log("delete list func", e);
+    },
+    handleGoDetail() {
+      this.$router.push("restaurant/detail");
     },
   },
 };

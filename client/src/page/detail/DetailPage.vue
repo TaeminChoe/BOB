@@ -6,7 +6,7 @@
     <div class="main-box">
       <div class="img-box">
         <img
-          src="https://i.pinimg.com/564x/07/3c/30/073c301c2691a0c8bf2e526d780fe652.jpg"
+          src="https://i.pinimg.com/564x/37/77/80/377780d6b8e9f335a2ec1598d616dd8f.jpg"
         />
       </div>
       <div class="detail-box">

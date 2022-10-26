@@ -2,8 +2,10 @@
   <header class="footer-container">
     <div class="link-container">
       <router-link v-for="(menu, key) in menus" :key="key" :to="menu.route">
-        <img v-if="menu.name === $route.name" :src="menu.imgNowSrc" />
-        <img v-if="menu.name !== $route.name" :src="menu.imgSrc" />
+        <!-- <img v-if="menu.name === $route.name" :src="menu.imgNowSrc" /> -->
+        <img v-if="$route.name.includes(menu.name)" :src="menu.imgNowSrc" />
+        <img v-else :src="menu.imgSrc" />
+        <!-- <img v-if="menu.name !== $route.name" :src="menu.imgSrc" /> -->
       </router-link>
     </div>
   </header>
