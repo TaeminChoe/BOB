@@ -8,32 +8,15 @@ const user = require("../../data/user.json");
  * json파일의 데이터를 가져와 SQL로 변환하여 DB에 넣는 코드입니다.
  */
 
-function leftPad(value) {
-  if (value >= 10) {
-    return value;
-  }
-
-  return `0${value}`;
-}
-
-function toStringByFormatting(source, delimiter = "-") {
-  const year = source.getFullYear();
-  const month = leftPad(source.getMonth() + 1);
-  const day = leftPad(source.getDate());
-
-  return [year, month, day].join(delimiter);
-}
-
 // notice insert query
 
 const getNoticeInsertQuery = () => {
-  const noticeQuery =
-    "INSERT INTO NOTICE(id, title, description, m_date) VALUES ";
+  const noticeQuery = "INSERT INTO NOTICE(title, description, date) VALUES ";
 
   const values = notice
-    .map(({ id, title, description, m_date }) => {
-      const date = toStringByFormatting(new Date(m_date));
-      return `(${leftPad(id)}, "${title}", "${description}", "${date}")`;
+    .map(({ title, description, date }) => {
+      const time = new Date(date);
+      return `("${title}", "${description}", "${time.getTime()}")`;
     })
     .join(", ");
 
@@ -44,12 +27,12 @@ const getNoticeInsertQuery = () => {
 
 const getStoreInsertQuery = () => {
   const storeQuery =
-    "INSERT INTO STORE(name, address, phone_number, m_date, description, img_url) VALUES ";
+    "INSERT INTO STORE(name, address, phone_number, date, description, img_url) VALUES ";
 
   const values = store
-    .map(({ name, address, phone_number, m_date, description, img_url }) => {
-      const date = toStringByFormatting(new Date(m_date));
-      return `("${name}", "${address}", "${phone_number}", "${date}", "${description}", "${img_url}")`;
+    .map(({ name, address, phone_number, date, description, img_url }) => {
+      const time = new Date(date);
+      return `("${name}", "${address}", "${phone_number}", "${time.getTime()}", "${description}", "${img_url}")`;
     })
     .join(", ");
 
@@ -59,12 +42,12 @@ const getStoreInsertQuery = () => {
 // user insert query
 
 const getUserInsertQuery = () => {
-  const userQuery = "INSERT INTO USER(id, m_date, pw, name, auth) VALUES ";
+  const userQuery = "INSERT INTO USER(id, date, pw, name, auth) VALUES ";
 
   const values = user
-    .map(({ id, m_date, pw, name, auth }) => {
-      const date = toStringByFormatting(new Date(m_date));
-      return `("${id}", "${date}", "${pw}", "${name}", "${auth}")`;
+    .map(({ id, date, pw, name, auth }) => {
+      const time = new Date(date);
+      return `("${id}", "${time.getTime()}", "${pw}", "${name}", "${auth}")`;
     })
     .join(", ");
 
