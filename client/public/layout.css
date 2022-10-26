@@ -207,7 +207,7 @@ body .bgcolor-mint {
 .bm-menu {
   background: #43d392 !important;
   border-top-left-radius: 20px;
-  border: 3px solid black;
+  box-shadow: 0 0 0 3px #000 inset;
   font-size: 1.8rem;
   font-weight: 700;
   font-family: "Roboto", sans-serif;
