@@ -4,12 +4,14 @@ import router from "./router";
 import store from "./store";
 import { DefaultApolloClient } from "@vue/apollo-composable";
 import { ApolloClient, InMemoryCache } from "@apollo/client/core";
+import { providerAPI } from "./gql/provider-api";
 
 const apolloClient = new ApolloClient({
   cache: new InMemoryCache(),
   uri: "<https://bob--server.herokuapp.com/graphql>",
 });
 
+providerAPI(store);
 const app = createApp({
   setup() {
     provide(DefaultApolloClient, apolloClient);
