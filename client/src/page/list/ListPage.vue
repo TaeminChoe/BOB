@@ -2,12 +2,24 @@
   <router-view v-if="!isList" />
   <div v-if="isList" class="title-text">
     <div>Restaurant</div>
-    <button class="bgcolor-orange" @click="handleAddList">ADD LIST</button>
+    <button
+      v-if="$store.state.auth == 'client'"
+      class="bgcolor-orange"
+      @click="handleAddList"
+    >
+      ADD LIST
+    </button>
   </div>
   <div class="content-layout">
     <div class="list-box">
+      <img
+        class="trash-btn"
+        src="@/assets/img/trash.png"
+        @click="handleDelList"
+      />
       <div class="img-box">
         <img
+          class="list-img"
           src="https://cdn.pixabay.com/photo/2014/11/05/15/57/salmon-518032__480.jpg"
         />
       </div>
@@ -17,25 +29,37 @@
       </div>
     </div>
     <div class="list-box">
+      <img
+        class="trash-btn"
+        src="@/assets/img/trash.png"
+        @click="handleDelList"
+      />
       <div class="img-box">
         <img
+          class="list-img"
           src="https://cdn.pixabay.com/photo/2014/11/05/15/57/salmon-518032__480.jpg"
         />
       </div>
       <div class="text-box">
-        <div class="list-title">레스토랑 이름영역입니다</div>
-        <div class="list-discription">레스토랑 설명영역입니다</div>
+        <div class="list-title">레스토랑 이름2</div>
+        <div class="list-discription">레스토랑 설명2</div>
       </div>
     </div>
     <div class="list-box">
+      <img
+        class="trash-btn"
+        src="@/assets/img/trash.png"
+        @click="handleDelList"
+      />
       <div class="img-box">
         <img
+          class="list-img"
           src="https://cdn.pixabay.com/photo/2014/11/05/15/57/salmon-518032__480.jpg"
         />
       </div>
       <div class="text-box">
-        <div class="list-title">레스토랑 이름영역입니다</div>
-        <div class="list-discription">레스토랑 설명영역입니다</div>
+        <div class="list-title">레스토랑 이름3</div>
+        <div class="list-discription">레스토랑 설명3</div>
       </div>
     </div>
   </div>
@@ -53,6 +77,9 @@ export default {
   methods: {
     handleAddList() {
       this.$router.push("/create");
+    },
+    handleDelList(e) {
+      console.log("delete list func", e);
     },
   },
 };
