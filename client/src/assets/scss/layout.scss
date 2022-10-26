@@ -83,6 +83,13 @@ body {
       margin: 0.5rem 0;
       padding: 0.5rem;
       display: flex;
+      position: relative;
+      .trash-btn {
+        position: absolute;
+        width: 1rem;
+        z-index: 100;
+        top: -0.5rem;
+      }
 
       .img-box {
         width: 50%;
@@ -90,7 +97,7 @@ body {
         overflow: hidden;
         position: relative;
 
-        img {
+        .list-img {
           height: 100%;
           background-size: cover;
           position: absolute;
@@ -198,6 +205,7 @@ body {
   background-color: white;
   display: flex;
   border-top: 1px solid rgb(204, 204, 204);
+  z-index: 9999;
   .link-container {
     width: 100%;
     display: flex;

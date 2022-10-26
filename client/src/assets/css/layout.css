@@ -78,6 +78,13 @@ body .bgcolor-mint {
   margin: 0.5rem 0;
   padding: 0.5rem;
   display: flex;
+  position: relative;
+}
+.template-layout .content-layout .list-box .trash-btn {
+  position: absolute;
+  width: 1rem;
+  z-index: 100;
+  top: -0.5rem;
 }
 .template-layout .content-layout .list-box .img-box {
   width: 50%;
@@ -85,7 +92,7 @@ body .bgcolor-mint {
   overflow: hidden;
   position: relative;
 }
-.template-layout .content-layout .list-box .img-box img {
+.template-layout .content-layout .list-box .img-box .list-img {
   height: 100%;
   background-size: cover;
   position: absolute;
@@ -181,6 +188,7 @@ body .bgcolor-mint {
   background-color: white;
   display: flex;
   border-top: 1px solid #cccccc;
+  z-index: 9999;
 }
 .footer-container .link-container {
   width: 100%;
