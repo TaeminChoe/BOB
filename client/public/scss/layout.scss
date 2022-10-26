@@ -206,7 +206,8 @@ body {
   background-color: white;
   display: flex;
   border-top: 1px solid rgb(204, 204, 204);
-  z-index: 9999;
+  z-index: 999;
+
   .link-container {
     width: 100%;
     display: flex;
@@ -219,4 +220,58 @@ body {
       color: white;
     }
   }
+}
+
+.bm-menu {
+  background: #43d392 !important;
+  border-top-left-radius: 20px;
+  border: 3px solid black;
+  font-size: 1.8rem;
+  font-weight: 700;
+  font-family: "Roboto", sans-serif;
+  .cross-style {
+    top: 25px !important;
+  }
+  .bm-cross {
+    background: white !important;
+  }
+  .bm-item-list {
+    display: flex;
+    flex-flow: column;
+    height: 80%;
+  }
+
+  .account-info {
+    width: 250px;
+    padding: 0 0 20px 0;
+    .account-name {
+      font-size: 30px;
+      font-weight: bold;
+      color: black;
+    }
+    .account-id {
+      font-size: 24px;
+      color: #ff9551;
+    }
+    .no-account {
+      font-weight: bold;
+      font-size: 26px;
+    }
+  }
+  .submit-button {
+    width: calc(10.5rem);
+    border: 0.17rem solid black;
+    color: black;
+    font-weight: bold;
+    font-size: 0.5rem;
+    background-color: white;
+    padding: 1rem 2rem;
+    justify-content: center;
+    margin-top: auto;
+  }
+}
+
+.prevent-click {
+  z-index: 1000 !important;
+  background-color: rgba(255, 255, 255, 0.6) !important;
 }

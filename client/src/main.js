@@ -2,7 +2,6 @@ import { createApp, provide, h } from "vue";
 import App from "./App.vue";
 import router from "./router";
 import store from "./store";
-import "@/assets/css/layout.css";
 import { DefaultApolloClient } from "@vue/apollo-composable";
 import { ApolloClient, InMemoryCache } from "@apollo/client/core";
 
