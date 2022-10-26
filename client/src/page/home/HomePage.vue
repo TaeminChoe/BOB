@@ -3,7 +3,7 @@
     <div>MOST POPULAL</div>
   </div>
   <div class="content-layout">
-    <div class="main-box">
+    <div class="main-box" @click="handleGoDetail">
       <div class="img-box">
         <img
           src="https://i.pinimg.com/564x/07/3c/30/073c301c2691a0c8bf2e526d780fe652.jpg"
@@ -52,5 +52,10 @@
 <script>
 export default {
   name: "HomePage",
+  methods: {
+    handleGoDetail() {
+      this.$router.push("restaurant/detail");
+    },
+  },
 };
 </script>
