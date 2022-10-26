@@ -5,6 +5,7 @@ import store from "./store";
 import { DefaultApolloClient } from "@vue/apollo-composable";
 import { ApolloClient, InMemoryCache } from "@apollo/client/core";
 import { providerAPI } from "./gql/provider-api";
+import { providerDialog } from "./helper/helper-dialog";
 
 const apolloClient = new ApolloClient({
   cache: new InMemoryCache(),
@@ -12,6 +13,7 @@ const apolloClient = new ApolloClient({
 });
 
 providerAPI(store);
+providerDialog(store);
 const app = createApp({
   setup() {
     provide(DefaultApolloClient, apolloClient);

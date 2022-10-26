@@ -11,15 +11,20 @@
         class="set-right"
       />
     </div>
+    <button @click="handleClickPopup">팝업</button>
   </div>
 </template>
 
 <script>
+import { openAlert } from "@/helper/helper-dialog";
 export default {
   name: "TemplateHeader",
   methods: {
     handleClickMenu() {
       this.$store.state.menuOpen = true;
+    },
+    handleClickPopup() {
+      openAlert("팝업테스트안녕하세요");
     },
   },
 };

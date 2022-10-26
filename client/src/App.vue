@@ -2,6 +2,7 @@
   <div>
     <div v-if="backgroundOpen" class="prevent-click"></div>
     <LoadingWrap v-if="loadingOpen" />
+    <ModalWrap v-if="modalOpen" />
     <router-view />
   </div>
 </template>
@@ -9,19 +10,28 @@
 <script>
 import { getLoginLocalToken } from "@/helper/helper-storage";
 import LoadingWrap from "@/components/common/LoadingWrap.vue";
+import ModalWrap from "@/components/common/ModalWrap.vue";
 export default {
   name: "App",
   computed: {
     backgroundOpen() {
-      // 슬라이드 메뉴 Or API 연동시 로딩바와 함께 백그라운드 처리 오픈
-      return this.$store.state.menuOpen || this.$store.state.loadingOpen;
+      // 슬라이드 메뉴 or 모달 오픈 or API 연동시 로딩바와 함께 백그라운드 처리 오픈
+      return (
+        this.$store.state.menuOpen ||
+        this.$store.state.loadingOpen ||
+        this.$store.state.modal.Open
+      );
     },
     loadingOpen() {
       return this.$store.state.loadingOpen;
     },
+    modalOpen() {
+      return this.$store.state.modal.open;
+    },
   },
   components: {
     LoadingWrap,
+    ModalWrap,
   },
 
   /**
