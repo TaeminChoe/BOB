@@ -1,6 +1,6 @@
 <template>
-  <div class="content-layout">
-    <button class="deleteBtn" @click="deleteNotice">
+  <div class="notice-layout">
+    <button class="deleteBtn" @click="deleteNotice(list.notice_id)">
       <img
         v-if="this.$store.state.auth === 'admin'"
         src="@/assets/img/trash.png"
@@ -28,6 +28,7 @@
 
 <script>
 import NoticeDetail from "./NoticeDetail.vue";
+import { deleteNotice } from "@/gql/service-api";
 
 export default {
   name: "NoticeList",
@@ -57,8 +58,8 @@ export default {
     leave: function (el) {
       el.style.height = "0";
     },
-    deleteNotice() {
-      console.log("삭제 버튼 클릭");
+    deleteNotice(id) {
+      deleteNotice(id);
     },
   },
   components: {
@@ -82,8 +83,14 @@ export default {
   background: none;
   border: none;
 }
-.content-layout {
-  margin-bottom: 0.3rem !important;
+.notice-layout {
+  width: 92.5%;
+  display: flex;
+  flex-flow: column;
+  margin-bottom: 1rem;
+}
+.notice-layout:last-child {
+  margin-bottom: 6rem;
 }
 .deleteBtn {
   background: none;

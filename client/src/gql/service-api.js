@@ -1,5 +1,5 @@
 import Apollo from "./provider-api";
-import { LOGIN, SIGN_UP } from "./queries";
+import { LOGIN, SIGN_UP, NOTICE_GET, NOTICE_CREATE,NOTICE_DELETE } from "./queries";
 /**
  * @description 화면단에서 사용할 API 목록입니다.
  * @author YangTaeWook
@@ -39,18 +39,30 @@ const updateStore = (param) => {
 };
 
 /** 공지사항 조회 요청 */
-const getNotice = (param) => {
-  console.log(param);
+const getNotice = () => {
+  return Apollo.query({
+    query: NOTICE_GET,
+  });
 };
 
 /** 공지사항 생성 요청 */
 const createNotice = (param) => {
-  console.log(param);
+  return Apollo.mutate({
+    mutation: NOTICE_CREATE,
+    variables: {
+      input: param,
+    },
+  });
 };
 
 /** 공지사항 삭제 요청 */
 const deleteNotice = (param) => {
-  console.log(param);
+  return Apollo.mutate({
+    mutation: NOTICE_DELETE,
+    variables: {
+      deleteNoticeId: param,
+    },
+  });
 };
 
 export {

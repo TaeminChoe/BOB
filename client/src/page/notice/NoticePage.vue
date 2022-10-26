@@ -18,26 +18,13 @@
 <script>
 import "@/assets/css/layout.css";
 import NoticeList from "./NoticeList.vue";
+import { getNotice } from "@/gql/service-api";
 
 export default {
   name: "NoticePage",
   data() {
     return {
-      list: [
-        {
-          title: "testTitle1",
-          desc: "testDesc1 testDesc1 testDesc1 testDesc1 testDesc1 testDesc1",
-        },
-        {
-          title: "testTitle2",
-          desc: "testDesc2 testDesc2 testDesc2 testDesc2 testDesc2 testDesc2 testDesc2 testDesc2 testDesc2 testDesc2 testDesc2 testDesc2",
-        },
-        {
-          title:
-            "testTitle3 testTitle3 testTitle3 testTitle3 testTitle3 testTitle3",
-          desc: "testDesc3",
-        },
-      ],
+      list: [],
     };
   },
   components: {
@@ -47,6 +34,11 @@ export default {
     addNotice() {
       this.$router.push("/addNotice");
     },
+  },
+  created() {
+    getNotice().then((res) => {
+      this.list = res.data.notices;
+    });
   },
 };
 </script>
