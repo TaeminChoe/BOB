@@ -1,5 +1,11 @@
-const MySQL = require("mysql2");
+const MySQL = require("mysql2/promise");
 require("dotenv").config();
+
+/**
+ * DB에 접근할 수 있는 객체를 생성합니다.
+ * DB와 연결해 통신하는 시간이 있기 때문에 비동기적으로 사용해야합니다.
+ * promise기반으로 되어 있기 때문에 await문법을 활용하면 됩니다.
+ */
 
 const {
   MYSQL_HOST = "",
@@ -8,38 +14,29 @@ const {
   MYSQL_DATABASE = "",
 } = process.env;
 
-// console.log(`
-//   MYSQL_HOST : ${MYSQL_HOST}
-//   MYSQL_USERNAME : ${MYSQL_USERNAME}
-//   MYSQL_PASSWORD : ${MYSQL_PASSWORD}
-//   MYSQL_DATABASE : ${MYSQL_DATABASE}
-// `);
-
-const connection = MySQL.createConnection({
+const info = {
   host: MYSQL_HOST,
   user: MYSQL_USERNAME,
   password: MYSQL_PASSWORD,
   database: MYSQL_DATABASE,
-});
+};
 
-const DBConfig = async () => {
-  let conn, code;
+const DBExecute = async (query) => {
+  console.log(`query: ${query}`);
+  let result;
+
   try {
-    connection.connect();
-    // connection.query(`SELECT DATABASE()`, (err, rows, fields) => {
-    connection.query(`SELECT * FROM USER`, (err, rows, fields) => {
-      if (!err) console.log("The solution is: ", rows);
-      else console.log("Error while performing query.", err);
-    });
-
-    connection.end();
-    console.log("Initialized!!!!");
-    code = 0;
+    const conn = await MySQL.createConnection(info);
+    result = await conn.query(query);
+    await conn.end();
   } catch (err) {
-    code = 1;
+    console.error(err);
+    result = err;
   }
+
+  return result;
 };
 
 module.exports = {
-  DBConfig,
+  DBExecute,
 };

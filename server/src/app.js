@@ -1,25 +1,11 @@
 const express = require("express");
 require("dotenv").config();
-const { DBConfig } = require("./DBConfig");
 const { ApolloServer, gql } = require("apollo-server-express");
+const typeDefs = require("./gql/typeDefs");
+const resolvers = require("./gql/resolvers");
+const voyagerMiddleware = require("graphql-voyager/middleware");
 
 const { PORT = 4000 } = process.env;
-
-// Construct a schema, using GraphQL schema language
-const typeDefs = gql`
-  type Query {
-    hello: String
-  }
-`;
-
-// Provide resolver functions for your schema fields
-const resolvers = {
-  Query: {
-    hello: () => "Hello world!",
-  },
-};
-
-DBConfig();
 const server = new ApolloServer({ typeDefs, resolvers });
 
 const app = express();
@@ -34,3 +20,5 @@ app.listen({ port: PORT }, (res, req) => {
 app.get("/", (req, res) => {
   res.redirect("/graphql");
 });
+
+app.use("/voyager", voyagerMiddleware.express({ endpointUrl: "/graphql" }));
