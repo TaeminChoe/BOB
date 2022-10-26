@@ -16,7 +16,6 @@
   <NoticeList v-for="lists in list" v-bind:key="lists" v-bind:list="lists" />
 </template>
 <script>
-import "@/assets/css/layout.css";
 import NoticeList from "./NoticeList.vue";
 
 export default {

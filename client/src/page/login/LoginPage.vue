@@ -13,7 +13,6 @@
 </template>
 
 <script>
-import "@/assets/css/layout.css";
 import { setLoginLocalToken } from "@/helper/helper-storage";
 import { getAccountInfo } from "@/gql/service-api";
 export default {
