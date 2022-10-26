@@ -3,6 +3,7 @@ require("dotenv").config();
 const { ApolloServer, gql } = require("apollo-server-express");
 const typeDefs = require("./gql/typeDefs");
 const resolvers = require("./gql/resolvers");
+const voyagerMiddleware = require("graphql-voyager/middleware");
 
 const { PORT = 4000 } = process.env;
 const server = new ApolloServer({ typeDefs, resolvers });
@@ -19,3 +20,5 @@ app.listen({ port: PORT }, (res, req) => {
 app.get("/", (req, res) => {
   res.redirect("/graphql");
 });
+
+app.use("/voyager", voyagerMiddleware.express({ endpointUrl: "/graphql" }));
