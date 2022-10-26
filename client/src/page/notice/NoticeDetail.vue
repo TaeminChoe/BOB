@@ -4,7 +4,7 @@
       {{ list.title }}
     </p>
     <p :class="this.isActive ? 'noticeDesc' : 'noticeDescHide'">
-      {{ list.desc }}
+      {{ list.description }}
     </p>
   </div>
 </template>
