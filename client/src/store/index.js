@@ -4,7 +4,10 @@ import { createStore } from "vuex";
 export default createStore({
   state: {
     menuOpen: false,
-    modalOpen: false,
+    modal: {
+      open: false,
+      description: "",
+    },
     loadingOpen: false,
     auth: "",
     accountInfo: null,
@@ -12,8 +15,12 @@ export default createStore({
   getters: {},
   mutations: {
     // 모달 오픈
-    setModalOpen(state, value) {
-      state.modalOpen = value;
+    setModalOpen(state, options) {
+      state.modal = { open: true, description: options.description };
+    },
+    // 모달 클로즈
+    setModalClose(state) {
+      state.modal = { open: false, description: null };
     },
     // 로딩 오픈
     setLoadingOpen(state, value) {
