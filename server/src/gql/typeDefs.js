@@ -79,9 +79,3 @@ const typeDefs = gql`
 `;
 
 module.exports = typeDefs;
-
-/**
- * USER : 회원가입, 로그인
- * STORE : 조회(전체, detail), 등록, 삭제
- * NOTICE : 조회(전체, detail), 등록, 삭제
- */
