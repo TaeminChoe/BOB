@@ -1,8 +1,8 @@
 import { gql } from "graphql-tag";
 
 export const LOGIN = gql`
-  query Login($loginId: String!, $pw: String!) {
-    login(id: $loginId, pw: $pw) {
+  query Login($id: String!, $pw: String!) {
+    login(id: $id, pw: $pw) {
       id
       m_date
       pw

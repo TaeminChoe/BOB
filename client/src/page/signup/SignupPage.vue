@@ -1,10 +1,10 @@
 <template>
   <div class="title-text"><div>Sign Up</div></div>
   <div class="content-layout">
-    <input placeholder="Your Name" />
-    <input placeholder="ID" />
-    <input placeholder="Create Password" />
-    <input placeholder="Check Password" />
+    <input placeholder="Your Name" v-model="name" />
+    <input placeholder="ID" v-model="id" />
+    <input placeholder="Create Password" v-model="pw" />
+    <input placeholder="Check Password" v-model="pwConfirm" />
     <button class="submit-button bgcolor-green" @click="handleClickSignup">
       NEXT
     </button>
@@ -12,31 +12,34 @@
 </template>
 
 <script>
-import { SIGN_UP } from "../../gql/queries";
-import { ApolloClient, InMemoryCache } from "@apollo/client/core";
-
+/**
+ * To Do 작성 : 양태욱
+ * 1. pw check
+ * 2. m_date 논의 후 양식 결정
+ * 3. 입력값 유효 검사
+ */
+import { createUser } from "@/gql/service-api";
 export default {
   name: "SignupPage",
+  data() {
+    return {
+      id: "",
+      name: "",
+      pw: "",
+      pwConfirm: "",
+    };
+  },
   methods: {
     handleClickSignup() {
-      const apolloClient = new ApolloClient({
-        cache: new InMemoryCache(),
-        uri: "https://bob--server.herokuapp.com/graphql",
-      });
-
-      const { result, loading, error } = apolloClient.mutate({
-        mutation: SIGN_UP,
-        variables: {
-          input: {
-            id: "ahyva2121134t411",
-            m_date: "2022-10-14",
-            pw: "1234",
-            name: "choe",
-            auth: "client",
-          },
-        },
-      });
-      console.log(result, loading, error);
+      const { id, name, pw } = this;
+      const payload = {
+        id,
+        m_date: new Date().getTime().toString(),
+        pw,
+        name,
+        auth: "client",
+      };
+      createUser(payload);
     },
   },
 };
