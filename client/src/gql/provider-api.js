@@ -11,6 +11,13 @@ import {
  * @author YangTaeWook
  */
 
+let store = null;
+
+const providerAPI = (_store) => {
+  store = _store;
+};
+export { providerAPI };
+
 const httpLink = new HttpLink({
   uri: "https://bob--server.herokuapp.com/graphql",
 });
@@ -20,6 +27,7 @@ const httpLink = new HttpLink({
  * 2. API 응답 후 세팅 (Loading Close 등)
  */
 const authMiddleware = new ApolloLink((operation, forward) => {
+  store.commit("setLoadingOpen", true);
   operation.setContext(({ headers = {} }) => ({
     // 헤더 설정
     headers: {
@@ -30,6 +38,7 @@ const authMiddleware = new ApolloLink((operation, forward) => {
 
   return forward(operation).map((data) => {
     // API 응답 후 처리
+    store.commit("setLoadingOpen", false);
     return data;
   });
 });
