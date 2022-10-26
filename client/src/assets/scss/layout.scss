@@ -111,6 +111,7 @@ body {
         font-style: normal;
         width: 50%;
         .list-title {
+          width: calc(100% - 1rem);
           height: calc(50% - 1rem);
           padding: 0.5rem;
           font-weight: 700;
