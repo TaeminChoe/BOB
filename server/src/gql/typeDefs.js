@@ -113,7 +113,7 @@ const typeDefs = gql`
 
     로그인실패시 null값 반환
     """
-    login("사용자 ID" id: String!, "사용자 비밀번호" pw: String!): User
+    login(id: String!, pw: String!): User
     """
     맛집 정보 요청 API (ID값 필수)
 
