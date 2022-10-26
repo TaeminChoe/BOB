@@ -5,6 +5,21 @@ body {
   .bgcolor-orange {
     background-color: #ff9551;
   }
+  .bgcolor-mint {
+    background-color: #b9fff8;
+  }
+}
+.header-layout {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding-top: 0.5rem;
+  img {
+    padding: 0.9rem;
+  }
+  .set-right {
+    margin-left: auto;
+  }
 }
 
 .template-layout {
@@ -12,19 +27,6 @@ body {
   flex-flow: column;
   align-items: center;
   justify-content: center;
-
-  .header-layout {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    padding-top: 2.5rem;
-    img {
-      padding: 0.9rem;
-    }
-    .set-right {
-      margin-left: auto;
-    }
-  }
 
   .title-text {
     width: calc(100% - 2rem);
@@ -52,7 +54,7 @@ body {
     width: 92.5%;
     display: flex;
     flex-flow: column;
-    padding-bottom: 4rem;
+    margin-bottom: 4rem;
 
     input {
       width: calc(100% - 4px - 1rem);
@@ -157,6 +159,33 @@ body {
           font-size: 0.8rem;
         }
       }
+
+      .detail-box {
+        font-family: "Roboto";
+        font-style: normal;
+        width: calc(100% - 1rem);
+        padding: 1.3rem 0.5rem 0 0.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+
+        .detail-title {
+          font-weight: 700;
+          font-size: 1rem;
+        }
+        .icon-img {
+          padding: 0.3rem;
+        }
+      }
+    }
+
+    .discription-box {
+      width: calc(100% -1rem);
+      display: flex;
+      flex-flow: column;
+      padding: 0.5rem;
+      padding-bottom: 1.5rem;
+      font-size: 0.9rem;
     }
   }
 }

@@ -1,19 +1,21 @@
 <template>
-  <div class="template-layout">
-    <div class="title-text"><div>Login</div></div>
-    <div class="content-layout">
-      <input placeholder="ID" v-model="id" />
-      <input placeholder="Password" v-model="pw" />
-      <button class="submit-button bgcolor-green" @click="handleClickLogin">
-        NEXT
-      </button>
-      <button class="submit-button bgcolor-orange">REGISTER</button>
-    </div>
+  <div class="title-text"><div>Login</div></div>
+  <div class="content-layout">
+    <input placeholder="ID" v-model="id" />
+    <input placeholder="Password" v-model="pw" />
+    <button class="submit-button bgcolor-green" @click="handleClickLogin">
+      NEXT
+    </button>
+    <button class="submit-button bgcolor-orange" @click="handleGoSignup">
+      REGISTER
+    </button>
   </div>
 </template>
 
 <script>
-import UserData from "../../mock/user";
+import "@/assets/css/layout.css";
+import UserData from "@/mock/user";
+import { setLoginLocalToken } from "@/helper/helper-storage";
 export default {
   name: "LoginPage",
   data() {
@@ -23,7 +25,7 @@ export default {
     };
   },
   methods: {
-    /** To Do : 해당 로그인 로직은 API 연동시 다시 구현해야됨 */
+    /** To Do 양태욱: 해당 로그인 로직은 API 연동시 다시 구현해야됨 */
     handleClickLogin() {
       const { id, pw } = this;
       /** ID & PW 없을 입력하지 않았을 때  */
@@ -42,11 +44,15 @@ export default {
       else {
         const { auth } = user;
         this.$store.commit("setAuth", auth ? auth : "client");
-        this.$store.commit("setAccounInfo", {
-          ...user,
-        });
+        this.$store.commit("setAccountInfo", user);
+
+        // To Do 양태욱 : 현재는 토큰이 없기에 유저 정보를 모두 넘기지만 추후에는 토큰 값으로 수정해야됨
+        setLoginLocalToken(user);
         this.$router.push("/");
       }
+    },
+    handleGoSignup() {
+      this.$router.push("signup");
     },
   },
 };
