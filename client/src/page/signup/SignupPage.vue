@@ -30,16 +30,40 @@ export default {
     };
   },
   methods: {
+    // 회원가입 버튼 클릭 이벤트
     handleClickSignup() {
       const { id, name, pw } = this;
-      const payload = {
-        id,
-        m_date: new Date().getTime().toString(),
-        pw,
-        name,
-        auth: "client",
-      };
-      createUser(payload);
+      const valid = this.handleValidation();
+      if (valid) {
+        alert(valid);
+      } else {
+        const payload = {
+          id,
+          date: new Date().getTime().toString(),
+          pw,
+          name,
+          auth: "client",
+        };
+        createUser(payload).then((res) => {
+          const { message, succeed } = res.data.signUp;
+          // CASE1. 회원가입 성공
+          if (succeed) {
+            this.$router.push("login");
+          }
+          // CASE2. 회원가입 실패
+          else {
+            alert(message);
+          }
+        });
+      }
+    },
+
+    // 입력값 유효성 검사
+    handleValidation() {
+      const { id, name, pw, pwConfirm } = this;
+      if (!id || !name || !pw || !pwConfirm) return "정보 입력 공백";
+      else if (pw !== pwConfirm) return "패스워드 확인이 불일치합니다.";
+      else return "";
     },
   },
 };

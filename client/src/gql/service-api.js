@@ -1,16 +1,9 @@
-import { ApolloClient, InMemoryCache } from "@apollo/client/core";
-
+import Apollo from "./provider-api";
 import { LOGIN, SIGN_UP } from "./queries";
-
-const Apollo = new ApolloClient({
-  cache: new InMemoryCache(),
-  uri: "https://bob--server.herokuapp.com/graphql",
-  defaultOptions: {
-    watchQuery: {
-      fetchPolicy: "no-cache", // 반대 "cache-only" - 그냥 이거 아예 지우면 캐시 되는듯함
-    },
-  },
-});
+/**
+ * @description 화면단에서 사용할 API 목록입니다.
+ * @author YangTaeWook
+ */
 
 /** 회원가입 요청 */
 const createUser = (param) => {
