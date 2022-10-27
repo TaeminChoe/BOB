@@ -1,5 +1,15 @@
 import Apollo from "./provider-api";
-import { LOGIN, SIGN_UP, NOTICE_GET, NOTICE_CREATE,NOTICE_DELETE } from "./queries";
+import {
+  LOGIN,
+  SIGN_UP,
+  STORE_GET,
+  NOTICE_GET,
+  NOTICE_CREATE,
+  NOTICE_DELETE,
+  STORE_DETAIL_GET,
+  STORE_DELETE,
+  STORE_CREATE,
+} from "./queries";
 /**
  * @description 화면단에서 사용할 API 목록입니다.
  * @author YangTaeWook
@@ -24,18 +34,45 @@ const getAccountInfo = (param) => {
 };
 
 /** 업소 조회 요청 */
-const getStore = (param) => {
-  console.log(param);
+const getStore = () => {
+  return Apollo.query({
+    query: STORE_GET,
+  });
+};
+
+/** 업소 상세조회 요청 */
+const getStoreDetail = (param) => {
+  return Apollo.query({
+    query: STORE_DETAIL_GET,
+    variables: param,
+  });
 };
 
 /** 업소 생성 요청 */
 const createStore = (param) => {
   console.log(param);
+  return Apollo.mutate({
+    mutation: STORE_CREATE,
+    variables: param,
+    // {
+    //   input: {
+    //     phone_number: "1",
+    //     name: "name",
+    //     img_url: "img",
+    //     description: "descriptoin",
+    //     date: "1",
+    //     address: "address",
+    //   },
+    // },
+  });
 };
 
-/** 업소 수정 요청 */
-const updateStore = (param) => {
-  console.log(param);
+/** 업소 삭제 요청 */
+const deleteStore = (param) => {
+  return Apollo.mutate({
+    mutation: STORE_DELETE,
+    variables: param,
+  });
 };
 
 /** 공지사항 조회 요청 */
@@ -67,8 +104,9 @@ const deleteNotice = (param) => {
 
 export {
   getStore,
+  getStoreDetail,
   createStore,
-  updateStore,
+  deleteStore,
   getAccountInfo,
   createUser,
   getNotice,

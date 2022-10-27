@@ -44,7 +44,7 @@ const routes = [
             path: "detail",
             name: "restaurant-detail",
             component: () => import("../page/detail/DetailPage"),
-            children: [],
+            query: { storeId: null },
           },
           {
             path: "add",
