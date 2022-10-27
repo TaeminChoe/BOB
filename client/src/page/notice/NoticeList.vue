@@ -60,6 +60,7 @@ export default {
     },
     deleteNotice(id) {
       deleteNotice(id);
+      window.location.reload(true);
     },
   },
   components: {
