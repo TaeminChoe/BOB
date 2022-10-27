@@ -1,34 +1,48 @@
 <template>
   <div class="title-text">
-    <div>Me Piatche</div>
+    <div>{{ list.name }}</div>
   </div>
   <div class="content-layout">
     <div class="main-box">
       <div class="img-box">
-        <img
-          src="https://i.pinimg.com/564x/37/77/80/377780d6b8e9f335a2ec1598d616dd8f.jpg"
-        />
+        <img :src="list.img_url" />
       </div>
       <div class="detail-box">
         <img src="@/assets/img/pin.png" class="icon-img" />
         <div class="detail-title">
-          서울 강남구 압구정로80길 19-2 삼영빌딩 1, 2층
+          {{ list.address }}
         </div>
       </div>
       <div class="detail-box">
         <img src="@/assets/img/phone.png" class="icon-img" />
-        <div class="detail-title">02-516-6317</div>
+        <div class="detail-title">{{ list.phone_number }}</div>
       </div>
     </div>
     <div class="discription-box">
-      청담사거리에서 학동사거리방면으로 신세계 인터네셔널 빌딩(SI빌딩)과
-      농협건물 사이 골목으로 들어오시면 10M 앞에 위치하고 있습니다.
+      {{ list.description }}
     </div>
   </div>
 </template>
 
 <script>
+import { getStoreDetail } from "@/gql/service-api";
+
 export default {
   name: "DetailPage",
+  data() {
+    return {
+      list: {},
+    };
+  },
+  created() {
+    let storeId = this.$route.query.store;
+    if (!storeId) {
+      this.$router.push({ name: "not-found" });
+    } else {
+      getStoreDetail({ storeId }).then((res) => {
+        this.list = res.data.store;
+      });
+    }
+  },
 };
 </script>
