@@ -36,9 +36,11 @@ export default {
     },
   },
   created() {
-    getNotice().then((res) => {
-      this.list = res.data.notices;
-    });
+    setTimeout(() => {
+      getNotice().then((res) => {
+        this.list = res.data.notices.reverse();
+      });
+    }, [500]);
   },
 };
 </script>
