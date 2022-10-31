@@ -13,7 +13,9 @@ const getUserDetail = (payload) => {
   return User.findOne({ id });
 };
 
-/** 신규 User 추가  */
+/** 신규 User 추가
+ * @param Object data
+ */
 const addUser = (data) => {
   const { id, pw, name, auth } = data;
   const date = new Date().getTime().toString();
