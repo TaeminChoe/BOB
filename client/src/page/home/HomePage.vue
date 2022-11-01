@@ -57,5 +57,10 @@ export default {
       this.$router.push("restaurant/detail");
     },
   },
+  mounted() {
+    this.axios.get().then((res) => {
+      console.log("test ", res);
+    });
+  },
 };
 </script>
