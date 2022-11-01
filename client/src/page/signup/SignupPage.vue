@@ -1,10 +1,10 @@
 <template>
   <div class="title-text"><div>Sign Up</div></div>
   <div class="content-layout">
-    <input placeholder="Your Name" v-model="name" />
-    <input placeholder="ID" v-model="id" />
-    <input placeholder="Create Password" v-model="pw" />
-    <input placeholder="Check Password" v-model="pwConfirm" />
+    <input class="input-box" placeholder="Your Name" v-model="name" />
+    <input class="input-box" placeholder="ID" v-model="id" />
+    <input class="input-box" placeholder="Create Password" v-model="pw" />
+    <input class="input-box" placeholder="Check Password" v-model="pwConfirm" />
     <button class="submit-button bgcolor-green" @click="handleClickSignup">
       NEXT
     </button>

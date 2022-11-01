@@ -1,12 +1,12 @@
 <template>
   <div class="title-text"><div>Restaurant</div></div>
   <form class="content-layout" @submit.prevent="handleAddList">
-    <input v-model="name" placeholder="Title" />
-    <input v-model="address" placeholder="Address" />
-    <input v-model="phone_number" placeholder="Number" />
-    <input v-model="img_url" placeholder="IMG Link" />
-    <input v-model="date" placeholder="Date" />
-    <input v-model="description" placeholder="Description" />
+    <input class="input-box" v-model="name" placeholder="Title" />
+    <input class="input-box" v-model="address" placeholder="Address" />
+    <input class="input-box" v-model="phone_number" placeholder="Number" />
+    <input class="input-box" v-model="img_url" placeholder="IMG Link" />
+    <input class="input-box" v-model="date" placeholder="Date" />
+    <input class="input-box" v-model="description" placeholder="Description" />
     <button type="submit" class="submit-button bgcolor-green">SUBMIT</button>
   </form>
 </template>

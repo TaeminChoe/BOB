@@ -98,7 +98,7 @@ export default {
     },
   },
   created() {
-    this.getListData();
+    // this.getListData();
   },
 };
 </script>

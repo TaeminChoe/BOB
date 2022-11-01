@@ -1,8 +1,8 @@
 <template>
   <div class="title-text"><div>Notice</div></div>
   <div class="content-layout">
-    <input placeholder="Title" v-model="title" />
-    <input placeholder="Description" v-model="description" />
+    <input class="input-box" placeholder="Title" v-model="title" />
+    <input class="input-box" placeholder="Description" v-model="description" />
     <button class="submit-button bgcolor-green" @click="submitNotice">
       SUBMIT
     </button>

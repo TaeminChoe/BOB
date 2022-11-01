@@ -1,8 +1,8 @@
 <template>
   <div class="title-text"><div>Login</div></div>
   <div class="content-layout">
-    <input placeholder="ID" v-model="id" />
-    <input placeholder="Password" v-model="pw" />
+    <input class="input-box" placeholder="ID" v-model="id" />
+    <input class="input-box" placeholder="Password" v-model="pw" />
     <button class="submit-button bgcolor-green" @click="handleClickLogin">
       NEXT
     </button>

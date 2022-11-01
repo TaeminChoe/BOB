@@ -23,10 +23,41 @@
         />
         <div class="date-text">2022.11.01</div>
       </div>
-      <div class="reciept-text-box">
+      <div class="reciept-desc-box">
         <div class="list-title">레스토랑이름</div>
         <div class="list-discription">적은 리뷰가 보여지는 공간입니다</div>
-        <div class="review-box">차트영역</div>
+        <div class="review-box">
+          <div class="review-list">
+            <div class="review-text">맛</div>
+            <input
+              class="review-range"
+              type="range"
+              value="5"
+              max="5"
+              disabled
+            />
+          </div>
+          <div class="review-list">
+            <div class="review-text">위생</div>
+            <input
+              class="review-range"
+              type="range"
+              value="1"
+              max="5"
+              disabled
+            />
+          </div>
+          <div class="review-list">
+            <div class="review-text">분위기</div>
+            <input
+              class="review-range"
+              type="range"
+              value="3"
+              max="5"
+              disabled
+            />
+          </div>
+        </div>
       </div>
     </div>
     <div class="list-box">
@@ -49,10 +80,51 @@
         />
         <div class="date-text">2022.11.01</div>
       </div>
-      <div class="reciept-text-box">
-        <div class="list-title">레스토랑이름</div>
-        <div class="list-discription">적은 리뷰가 보여지는 공간입니다</div>
-        <div class="review-box">차트영역</div>
+      <div class="reciept-desc-box">
+        <div class="list-title">
+          레스토랑이름이 길 경우 높이가 길어지는 형태로 노출 됩니다아아아아
+        </div>
+        <div class="list-discription">
+          적은 리뷰가 보여지는 공간입니다적은 리뷰가 보여지는 공간입니다적은
+          리뷰가 보여지는 공간입니다적은 리뷰가 보여지는 공간입니다적은 리뷰가
+          보여지는 공간입니다적은 리뷰가 보여지는 공간입니다적은 리뷰가 보여지는
+          공간입니다적은 리뷰가 보여지는 공간입니다적은 리뷰가 보여지는
+          공간입니다적은 리뷰가 보여지는 공간입니다적은 리뷰가 보여지는
+          공간입니다적은 리뷰가 보여지는 공간입니다적은 리뷰가 보여지는
+          공간입니다
+        </div>
+        <div class="review-box">
+          <div class="review-list">
+            <div class="review-text">맛</div>
+            <input
+              class="review-range"
+              type="range"
+              value="1"
+              max="5"
+              disabled
+            />
+          </div>
+          <div class="review-list">
+            <div class="review-text">위생</div>
+            <input
+              class="review-range"
+              type="range"
+              value="2"
+              max="5"
+              disabled
+            />
+          </div>
+          <div class="review-list">
+            <div class="review-text">분위기</div>
+            <input
+              class="review-range"
+              type="range"
+              value="3"
+              max="5"
+              disabled
+            />
+          </div>
+        </div>
       </div>
     </div>
   </div>
