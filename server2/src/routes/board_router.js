@@ -1,4 +1,5 @@
 const express = require("express");
+const { default: mongoose } = require("mongoose");
 const router = express.Router();
 const service = require("../serviceDB");
 
@@ -52,9 +53,6 @@ function getBoardDetail(req, res) {
     .catch((e) => {
       res.status(500).json(e);
     });
-  // service.boardFind({ board_id }).then((db_res) => {
-  //   res.json(db_res);
-  // });
 }
 
 /**
@@ -71,8 +69,9 @@ function getBoardDetail(req, res) {
  */
 function createBoard(req, res) {
   const { author, title, description } = req.body;
+  const board_id = mongoose.Types.ObjectId();
   service
-    .boardSave({ author, title, description })
+    .boardSave({ board_id, author, title, description })
     .then((db_res) => {
       res.json(db_res);
     })

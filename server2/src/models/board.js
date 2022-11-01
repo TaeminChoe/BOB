@@ -12,7 +12,7 @@ var Schema = mongoose.Schema;
 const boardSchema = new mongoose.Schema({
   board_id: {
     type: Schema.Types.ObjectId,
-    default: mongoose.Types.ObjectId(),
+    required: true,
   },
   author: { type: String, required: true },
   date: { type: Date, default: Date.now },

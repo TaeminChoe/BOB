@@ -14,7 +14,7 @@ var Schema = mongoose.Schema;
 const storeSchema = new mongoose.Schema({
   store_id: {
     type: Schema.Types.ObjectId,
-    default: mongoose.Types.ObjectId(),
+    required: true,
   },
   address: { type: String, required: true },
   name: { type: String, required: true },
