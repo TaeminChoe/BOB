@@ -20,7 +20,7 @@ router.get("/", getToken);
 function getToken(req, res) {
   const { id, pw } = req.query;
 
-  service.getUserDetail({ id }).then((detailRes) => {
+  service.userFindOne({ id }).then((detailRes) => {
     if (detailRes) {
       if (pw === detailRes.pw) {
         res.json({ code: 200000, result: detailRes });

@@ -6,6 +6,10 @@ router.get("/", getUserList);
 router.get("/detail", getUserDetail);
 router.post("/", createUser);
 
+/**
+ * @file 로그인/회원가입 등 user에 관련된 router 기능이 명시되어있습니다.
+ */
+
 // ------------ 기능 --------------
 
 /**

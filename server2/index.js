@@ -3,6 +3,7 @@ const express = require("express");
 const db = require("./db");
 const userRouter = require("./src/routes/user_router");
 const tokenRouter = require("./src/routes/token_router");
+const boardRouter = require("./src/routes/board_router");
 const app = express();
 const { PORT = 9500 } = process.env;
 const cors = require("cors");
@@ -14,6 +15,7 @@ app.use(cors());
 
 app.use("/user", userRouter);
 app.use("/token", tokenRouter);
+app.use("/board", boardRouter);
 
 app.use("/", (req, res) => {
   res.json({ test: "main" });
