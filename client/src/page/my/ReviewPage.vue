@@ -36,6 +36,7 @@
               max="5"
               disabled
             />
+            <div class="review-value">5</div>
           </div>
           <div class="review-list">
             <div class="review-text">위생</div>
@@ -46,6 +47,7 @@
               max="5"
               disabled
             />
+            <div class="review-value">1</div>
           </div>
           <div class="review-list">
             <div class="review-text">분위기</div>
@@ -56,73 +58,7 @@
               max="5"
               disabled
             />
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="list-box">
-      <!-- <img
-        class="trash-btn"
-        v-if="$store.state.auth == 'admin'"
-        src="@/assets/img/trash.png"
-        @click="handleDelReview"
-      /> -->
-      <img
-        class="trash-btn"
-        v-if="$store.state.auth == ''"
-        src="@/assets/img/trashGreen.png"
-        @click="handleDelReview"
-      />
-      <div class="reciept-img-box">
-        <img
-          class="list-img"
-          src="https://file.mk.co.kr/meet/neds/2019/06/image_readtop_2019_409883_15603084023784973.jpg"
-        />
-        <div class="date-text">2022.11.01</div>
-      </div>
-      <div class="reciept-desc-box">
-        <div class="list-title">
-          레스토랑이름이 길 경우 높이가 길어지는 형태로 노출 됩니다아아아아
-        </div>
-        <div class="list-discription">
-          적은 리뷰가 보여지는 공간입니다적은 리뷰가 보여지는 공간입니다적은
-          리뷰가 보여지는 공간입니다적은 리뷰가 보여지는 공간입니다적은 리뷰가
-          보여지는 공간입니다적은 리뷰가 보여지는 공간입니다적은 리뷰가 보여지는
-          공간입니다적은 리뷰가 보여지는 공간입니다적은 리뷰가 보여지는
-          공간입니다적은 리뷰가 보여지는 공간입니다적은 리뷰가 보여지는
-          공간입니다적은 리뷰가 보여지는 공간입니다적은 리뷰가 보여지는
-          공간입니다
-        </div>
-        <div class="review-box">
-          <div class="review-list">
-            <div class="review-text">맛</div>
-            <input
-              class="review-range"
-              type="range"
-              value="1"
-              max="5"
-              disabled
-            />
-          </div>
-          <div class="review-list">
-            <div class="review-text">위생</div>
-            <input
-              class="review-range"
-              type="range"
-              value="2"
-              max="5"
-              disabled
-            />
-          </div>
-          <div class="review-list">
-            <div class="review-text">분위기</div>
-            <input
-              class="review-range"
-              type="range"
-              value="3"
-              max="5"
-              disabled
-            />
+            <div class="review-value">3</div>
           </div>
         </div>
       </div>
