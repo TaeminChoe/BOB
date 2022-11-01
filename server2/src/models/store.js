@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+var Schema = mongoose.Schema;
 /**
  * @name storeSchema
  * @description 제휴점에 대한 스키마입니다.
@@ -11,12 +12,15 @@ const mongoose = require("mongoose");
  * @param {String} img_url 이미지 경로
  */
 const storeSchema = new mongoose.Schema({
-  store_id: "string",
-  address: "string",
-  name: "string",
-  date: "string",
-  description: "string",
-  img_url: "string",
+  store_id: {
+    type: Schema.Types.ObjectId,
+    default: mongoose.Types.ObjectId(),
+  },
+  address: { type: String, required: true },
+  name: { type: String, required: true },
+  date: { type: Date, default: Date.now },
+  description: { type: String, required: true },
+  img_url: { type: String },
 });
 
-module.exports = mongoose.model("Board", storeSchema);
+module.exports = mongoose.model("Store", storeSchema);

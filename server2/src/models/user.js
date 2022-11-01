@@ -10,11 +10,11 @@ const mongoose = require("mongoose");
  * @param {String} date 가입날짜
  */
 const userSchema = new mongoose.Schema({
-  id: "string",
-  date: "string",
-  pw: "string",
-  name: "string",
-  auth: "string",
+  id: { type: String, required: true },
+  date: { type: Date, default: Date.now },
+  pw: { type: String, required: true },
+  name: { type: String, required: true },
+  auth: { type: String, required: true },
 });
 
 // Create Model & Export

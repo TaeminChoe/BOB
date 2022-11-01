@@ -3,7 +3,7 @@ const router = express.Router();
 const service = require("../serviceDB");
 
 /* 로그인 관련한 기능 API */
-router.get("/", getToken);
+router.post("/", getToken);
 
 /**
  * <h4>
@@ -18,8 +18,7 @@ router.get("/", getToken);
  *
  */
 function getToken(req, res) {
-  const { id, pw } = req.query;
-
+  const { id, pw } = req.body;
   service.userFindOne({ id }).then((detailRes) => {
     if (detailRes) {
       if (pw === detailRes.pw) {
