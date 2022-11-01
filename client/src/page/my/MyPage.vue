@@ -5,7 +5,13 @@
       <div>My Page</div>
     </div>
     <div class="content-layout">
-      <button name="review" @click="handleGoPage">Review</button>
+      <div class="mypage-box">
+        <div class="account-name">Admin</div>
+        <div class="account-id">Admin@pineone.com</div>
+      </div>
+      <div class="mypage-box" name="review" @click="handleGoReview">
+        작성리뷰확인
+      </div>
     </div>
   </slot>
 </template>
@@ -28,12 +34,9 @@ export default {
     },
   },
   methods: {
-    handleGoPage(e) {
-      this.$router.push("my/" + e.target.name);
+    handleGoReview() {
+      this.$router.push("my/review");
     },
-  },
-  created() {
-    // this.getReviewData();
   },
 };
 </script>

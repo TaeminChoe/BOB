@@ -70,6 +70,29 @@ body .bgcolor-mint {
   color: white;
   font-weight: bold;
 }
+.template-layout .content-layout .mypage-box {
+  width: calc(100% - 3rem - 4px);
+  border: 2px solid black;
+  border-radius: 8px;
+  margin: 0.5rem 0;
+  padding: 1.5rem;
+  display: flex;
+  position: relative;
+  flex-flow: column;
+  font-size: 0.8rem;
+  font-weight: 700;
+  font-family: "Roboto", sans-serif;
+}
+.template-layout .content-layout .mypage-box .account-name {
+  font-size: 2rem;
+  color: black;
+  font-weight: 500;
+}
+.template-layout .content-layout .mypage-box .account-id {
+  font-size: 1.3rem;
+  color: #ff9551;
+  font-weight: 500;
+}
 .template-layout .content-layout .list-box {
   width: calc(100% - 1rem);
   height: 12rem;
