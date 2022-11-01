@@ -8,3 +8,4 @@ client/dist
 client/.env
 
 .env
+.DS_store
