@@ -1,5 +1,6 @@
 const User = require("./models/user");
 const Board = require("./models/board");
+const Store = require("./models/store");
 
 /**
  * @name serviceDB
@@ -31,6 +32,7 @@ const boardFind = () => {
   return Board.find({});
 };
 
+// 상세 게시물 조회
 const boardFindOne = (payload) => {
   const { board_id } = payload;
   return Board.findOne({ board_id });
@@ -43,6 +45,25 @@ const boardSave = (data) => {
 };
 
 /* ----------Board End --------- */
+/* ----------Store Start --------- */
+// 전체 제휴점 조회
+const storeFind = () => {
+  return Store.find({});
+};
+
+// 상세 제휴점 조회
+const storeFindOne = (payload) => {
+  const { store_id } = payload;
+  return Store.findOne({ store_id });
+};
+
+// 제휴점 생성
+const storeSave = (data) => {
+  const newStore = new Store(data);
+  return newStore.save({});
+};
+
+/* ----------Store End --------- */
 module.exports = {
   userFind,
   userFindOne,
@@ -50,4 +71,7 @@ module.exports = {
   boardFind,
   boardFindOne,
   boardSave,
+  storeFind,
+  storeFindOne,
+  storeSave,
 };
