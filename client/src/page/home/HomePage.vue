@@ -52,5 +52,11 @@
 <script>
 export default {
   name: "HomePage",
+
+  mounted() {
+    this.axios.get().then((res) => {
+      console.log("test ", res);
+    });
+  },
 };
 </script>
