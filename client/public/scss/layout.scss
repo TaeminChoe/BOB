@@ -124,6 +124,52 @@ body {
           font-size: 0.7rem;
         }
       }
+
+      .reciept-img-box {
+        width: 35%;
+        height: 100%;
+        overflow: hidden;
+        position: relative;
+
+        .list-img {
+          height: 87%;
+          background-size: cover;
+          position: absolute;
+          left: 50%;
+          transform: translate(-50%, 0);
+        }
+        .date-text {
+          height: calc(15% - 2rem);
+          position: absolute;
+          bottom: 0;
+          left: 50%;
+          transform: translate(-50%, 0);
+          font-size: 0.8rem;
+          padding: 1rem 0;
+        }
+      }
+
+      .reciept-text-box {
+        font-family: "Roboto";
+        font-style: normal;
+        width: 50%;
+        .list-title {
+          width: calc(100% - 1rem);
+          padding: 0.5rem;
+          font-weight: 700;
+          font-size: 1.4rem;
+        }
+        .list-discription {
+          padding: 0.5rem;
+          font-weight: 400;
+          font-size: 0.7rem;
+        }
+        .review-box {
+          width: calc(100% - 1rem);
+          height: calc(50% - 1rem);
+          padding: 0.5rem;
+        }
+      }
     }
 
     .main-box {
