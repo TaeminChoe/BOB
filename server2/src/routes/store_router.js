@@ -1,4 +1,5 @@
 const express = require("express");
+const { default: mongoose } = require("mongoose");
 const router = express.Router();
 const service = require("../serviceDB");
 
@@ -70,8 +71,9 @@ function getStoreDetail(req, res) {
  */
 function createStore(req, res) {
   const { address, name, phone_number, description, img_url } = req.body;
+  const store_id = mongoose.Types.ObjectId();
   service
-    .storeSave({ address, name, phone_number, description, img_url })
+    .storeSave({ store_id, address, name, phone_number, description, img_url })
     .then((db_res) => {
       res.json(db_res);
     })

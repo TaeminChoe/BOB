@@ -5,6 +5,7 @@ const userRouter = require("./src/routes/user_router");
 const tokenRouter = require("./src/routes/token_router");
 const boardRouter = require("./src/routes/board_router");
 const storeRouter = require("./src/routes/store_router");
+const reviewRouter = require("./src/routes/review_router");
 const app = express();
 const { PORT = 9500 } = process.env;
 const cors = require("cors");
@@ -18,6 +19,7 @@ app.use("/user", userRouter);
 app.use("/token", tokenRouter);
 app.use("/board", boardRouter);
 app.use("/store", storeRouter);
+app.use("/review", reviewRouter);
 
 app.use("/", (req, res) => {
   res.json({ test: "main" });

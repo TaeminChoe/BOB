@@ -1,6 +1,7 @@
 const User = require("./models/user");
 const Board = require("./models/board");
 const Store = require("./models/store");
+const Review = require("./models/review");
 
 /**
  * @name serviceDB
@@ -64,6 +65,24 @@ const storeSave = (data) => {
 };
 
 /* ----------Store End --------- */
+/* ----------Review Start --------- */
+// 특정 리뷰 조회
+const reviewFind = (payload) => {
+  const { search_type, search_value } = payload;
+  return Review.find().where(search_type).equals(search_value);
+};
+// 리뷰 생성
+const reviewSave = (payload) => {
+  const newReview = new Review(payload);
+  return newReview.save({});
+};
+
+// 리뷰 삭제
+const reviewRemove = (payload) => {
+  const { review_id } = payload;
+  return Review.remove().where("review_id").equals(review_id);
+};
+/* ----------Review End --------- */
 module.exports = {
   userFind,
   userFindOne,
@@ -74,4 +93,7 @@ module.exports = {
   storeFind,
   storeFindOne,
   storeSave,
+  reviewSave,
+  reviewFind,
+  reviewRemove,
 };
