@@ -73,7 +73,7 @@ const routes = [
         children: [
           {
             path: "review",
-            name: "restaurant-add",
+            name: "my-review",
             component: () => import("../page/my/ReviewPage"),
             children: [],
           },

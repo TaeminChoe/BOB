@@ -75,6 +75,31 @@ body {
       font-weight: bold;
     }
 
+    .mypage-box {
+      width: calc(100% - 3rem - 4px);
+      border: 2px solid black;
+      border-radius: 8px;
+      margin: 0.5rem 0;
+      padding: 1.5rem;
+      display: flex;
+      position: relative;
+      flex-flow: column;
+      font-size: 0.8rem;
+      font-weight: 700;
+      font-family: "Roboto", sans-serif;
+
+      .account-name {
+        font-size: 2rem;
+        color: black;
+        font-weight: 500;
+      }
+      .account-id {
+        font-size: 1.3rem;
+        color: #ff9551;
+        font-weight: 500;
+      }
+    }
+
     .list-box {
       width: calc(100% - 1rem);
       height: 12rem;
