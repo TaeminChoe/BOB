@@ -49,8 +49,7 @@ const routes = [
           {
             path: "add",
             name: "restaurant-add",
-            component: () => import("../page//list/ListCreatePage"),
-            children: [],
+            component: () => import("../page/list/ListCreatePage"),
           },
         ],
       },
@@ -69,8 +68,16 @@ const routes = [
         path: "/my",
         name: "my",
         component: () => import("../page/my/MyPage"),
-        meta: { authorization: ["client", "admin"] },
+        // meta: { authorization: ["client", "admin"] },
         isMenu: true,
+        children: [
+          {
+            path: "review",
+            name: "restaurant-add",
+            component: () => import("../page/my/ReviewPage"),
+            children: [],
+          },
+        ],
       },
       {
         path: "/admin",

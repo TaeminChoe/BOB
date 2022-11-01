@@ -1,6 +1,6 @@
 <template>
-  <router-view v-if="!isList" />
-  <slot v-else>
+  <router-view v-if="isListAddPage" />
+  <slot v-if="isListPage">
     <div class="title-text">
       <div>Restaurant</div>
       <button
@@ -50,9 +50,12 @@ export default {
     };
   },
   computed: {
-    /** 현재 경로가 List 화면인지 확인 */
-    isList() {
+    /** 경로에 따른 화면 랜딩 */
+    isListPage() {
       return this.$route.matched.at(-1).path === "/restaurant";
+    },
+    isListAddPage() {
+      return this.$route.matched.at(-1).path === "/restaurant/add";
     },
   },
   methods: {
