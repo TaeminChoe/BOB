@@ -14,7 +14,9 @@
 
 <script>
 import { setLoginLocalToken } from "@/helper/helper-storage";
-import { getAccountInfo } from "@/gql/service-api";
+// import { getAccountInfo } from "@/gql/service-api";
+import { getAccountInfo } from "../../ApiService";
+
 export default {
   name: "LoginPage",
   data() {

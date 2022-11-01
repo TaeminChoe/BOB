@@ -1,6 +1,8 @@
 <template>
   <div class="title-text">
     <div>MOST POPULAL</div>
+    <button @click="getUser">TEST</button>
+    <button @click="joinMember">TEST2</button>
   </div>
   <div class="content-layout">
     <div class="main-box" @click="handleGoDetail">
@@ -50,11 +52,35 @@
 </template>
 
 <script>
+import { getUser } from "../../ApiService";
+// console.log("읭 ", ApiService);
 export default {
   name: "HomePage",
   methods: {
     handleGoDetail() {
       this.$router.push("restaurant/detail");
+    },
+    getUser() {
+      // this.axios.get("/user");
+      const id = "test";
+      // this.axios.get("/user/detail", {
+      //   params: {
+      //     id: id,
+      //   },
+      // });
+      getUser(id);
+    },
+    joinMember() {
+      // this.axios.post("/user", {
+      //   id: "test11",
+      //   pw: "test",
+      //   name: "test",
+      //   auth: "client",
+      // });
+      this.axios.post("/token", {
+        id: "test11",
+        pw: "test",
+      });
     },
   },
   mounted() {

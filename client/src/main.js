@@ -4,10 +4,12 @@ import router from "./router";
 import store from "./store";
 import { providerAPI } from "./gql/provider-api";
 import { providerDialog } from "./helper/helper-dialog";
+import { providerLoading } from "./AxiosService";
 import AxiosService from "./AxiosService";
 
 providerAPI(store);
 providerDialog(store);
+providerLoading(store)
 const app = createApp({
   setup() {
     app.config.globalProperties.axios = AxiosService
