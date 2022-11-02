@@ -1,3 +1,6 @@
+body {
+  font-family: "Roboto", sans-serif;
+}
 body .bgcolor-green {
   background-color: #43d392;
 }
@@ -35,7 +38,6 @@ body .bgcolor-mint {
   padding: 1rem;
   font-size: 1.8rem;
   font-weight: 700;
-  font-family: "Roboto", sans-serif;
 }
 .template-layout .title-text button {
   width: calc(40%);
@@ -81,7 +83,6 @@ body .bgcolor-mint {
   flex-flow: column;
   font-size: 0.8rem;
   font-weight: 700;
-  font-family: "Roboto", sans-serif;
 }
 .template-layout .content-layout .mypage-box .account-name {
   font-size: 2rem;
@@ -123,7 +124,6 @@ body .bgcolor-mint {
   transform: translate(-50%, 0);
 }
 .template-layout .content-layout .list-box .text-box {
-  font-family: "Roboto";
   font-style: normal;
   width: 50%;
 }
@@ -139,6 +139,33 @@ body .bgcolor-mint {
   padding: 0.5rem;
   font-weight: 400;
   font-size: 0.7rem;
+}
+.template-layout .content-layout .list-box .dounut-box {
+  width: 35%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.template-layout .content-layout .list-box .dounut-box .circle-box {
+  width: 6rem;
+  height: 6rem;
+  border-radius: 50%;
+  position: relative;
+}
+.template-layout .content-layout .list-box .dounut-box .text-box {
+  width: 100%;
+  height: 100%;
+  font-size: 4em;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  line-height: 6rem;
+  position: absolute;
+  color: white;
+  font-weight: 900;
+  -webkit-text-stroke: 3px black;
 }
 .template-layout .content-layout .list-box .reciept-img-box {
   width: 35%;
@@ -163,7 +190,6 @@ body .bgcolor-mint {
   padding: 1rem 0;
 }
 .template-layout .content-layout .list-box .reciept-desc-box {
-  font-family: "Roboto";
   font-style: normal;
   width: 75%;
   display: flex;
@@ -193,7 +219,6 @@ body .bgcolor-mint {
   height: 33%;
   display: flex;
   font-weight: 700;
-  font-family: "Roboto", sans-serif;
   flex-flow: row;
 }
 .template-layout .content-layout .list-box .reciept-desc-box .review-box .review-list .review-text {
@@ -250,7 +275,6 @@ body .bgcolor-mint {
   transform: translate(0%, -50%);
 }
 .template-layout .content-layout .main-box .text-box {
-  font-family: "Roboto";
   font-style: normal;
   width: 100%;
   height: 3.5rem;
@@ -268,7 +292,6 @@ body .bgcolor-mint {
   font-size: 0.8rem;
 }
 .template-layout .content-layout .main-box .detail-box {
-  font-family: "Roboto";
   font-style: normal;
   width: calc(100% - 1rem);
   padding: 1.3rem 0.5rem 0 0.5rem;
@@ -321,7 +344,6 @@ body .bgcolor-mint {
   box-shadow: 0 0 0 3px #000 inset;
   font-size: 1.8rem;
   font-weight: 700;
-  font-family: "Roboto", sans-serif;
 }
 .bm-menu .cross-style {
   top: 25px !important;
@@ -381,5 +403,4 @@ body .bgcolor-mint {
   color: #ff9551;
   font-size: 2.5rem;
   font-weight: 400;
-  font-family: "Roboto", sans-serif;
 }
