@@ -48,7 +48,7 @@ const boardSave = (data) => {
 // 게시물 삭제
 const boardRemove = (payload) => {
   const { board_id } = payload;
-  return Board.remove.where("board_id").equals(board_id);
+  return Board.remove().where("board_id").equals(board_id);
 };
 
 /* ----------Board End --------- */

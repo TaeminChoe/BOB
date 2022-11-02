@@ -86,7 +86,7 @@ function createBoard(req, res) {
  * <b>
  * <span style="background-color: #F7DDBE">게시글 삭제 API입니다.</span>
  * <br />
- * <span style="background-color: #fff5b1">DELETE - {PUBLIC_URL}/board/delete</span>
+ * <span style="background-color: #fff5b1">DELETE - {PUBLIC_URL}/board</span>
  * </b>
  * </h4>
  * @param {String} board_id 게시글 고유 아이디
