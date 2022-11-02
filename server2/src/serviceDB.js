@@ -26,6 +26,12 @@ const userSave = (data) => {
   return newUser.save({});
 };
 
+//  User 삭제
+const userRemove = (payload) => {
+  const { id } = payload;
+  return User.remove().where("id").equals(id);
+};
+
 /* ----------User End --------- */
 /* ----------Board Start --------- */
 // 전체 게시물 조회
@@ -93,6 +99,7 @@ module.exports = {
   userFind,
   userFindOne,
   userSave,
+  userRemove,
   boardFind,
   boardFindOne,
   boardSave,

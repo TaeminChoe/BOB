@@ -9,13 +9,17 @@
     <button class="submit-button bgcolor-orange" @click="handleGoSignup">
       REGISTER
     </button>
+    <input class="input-box" placeholder="Delete ID" v-model="deleteId" />
+    <button class="submit-button bgcolor-orange" @click="handleDeleteUser">
+      DELETE
+    </button>
   </div>
 </template>
 
 <script>
-import { setLoginLocalToken } from "@/helper/helper-storage";
+// import { setLoginLocalToken } from "@/helper/helper-storage";
 // import { getAccountInfo } from "@/gql/service-api";
-import { getAccountInfo } from "../../ApiService";
+import { getAccountInfo, deleteAccountInfo } from "@/system/ApiService";
 
 export default {
   name: "LoginPage",
@@ -23,6 +27,7 @@ export default {
     return {
       id: "",
       pw: "",
+      deleteId: "",
     };
   },
   methods: {
@@ -38,26 +43,31 @@ export default {
         id,
         pw,
       }).then((res) => {
-        const result = res.data.login;
-        // 아이디가 없거나 비밀번호가 틀렸거나
-        if (!result) {
-          alert("입력하신 정보에 해당하는 계정이 없습니다.");
-        }
-        // 로그인 성공
-        else {
-          const { auth } = result;
-          this.$store.commit("setAuth", auth);
-          this.$store.commit("setAccountInfo", result);
+        console.log("로그인 결과 : ", res);
+        // const result = res.data.login;
+        // // 아이디가 없거나 비밀번호가 틀렸거나
+        // if (!result) {
+        //   alert("입력하신 정보에 해당하는 계정이 없습니다.");
+        // }
+        // // 로그인 성공
+        // else {
+        //   const { auth } = result;
+        //   this.$store.commit("setAuth", auth);
+        //   this.$store.commit("setAccountInfo", result);
 
-          setLoginLocalToken(result);
-          this.$router.push("/");
-        }
+        //   setLoginLocalToken(result);
+        //   this.$router.push("/");
+        // }
       });
     },
-
     /** 회원가입 화면 이동 */
     handleGoSignup() {
       this.$router.push("signup");
+    },
+    // 유저 삭제 요청
+    handleDeleteUser() {
+      const { deleteId } = this;
+      deleteAccountInfo({ id: deleteId });
     },
   },
 };

@@ -5,6 +5,7 @@ const service = require("../serviceDB");
 router.get("/", getUserList);
 router.get("/detail", getUserDetail);
 router.post("/", createUser);
+router.delete("/", removeUser);
 
 /**
  * @file 로그인/회원가입 등 user에 관련된 router 기능이 명시되어있습니다.
@@ -22,9 +23,15 @@ router.post("/", createUser);
  * </h4>
  */
 function getUserList(req, res) {
-  service.userFind().then((data_result) => {
-    res.json({ result: data_result });
-  });
+  service
+    .userFind()
+    .then((data_result) => {
+      res.json({ result: data_result });
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json(err);
+    });
 }
 
 /**
@@ -38,9 +45,15 @@ function getUserList(req, res) {
  * @param {String} id 아이디
  */
 function getUserDetail(req, res) {
-  service.userFindOne(req.query).then((data_result) => {
-    res.json({ result: data_result });
-  });
+  service
+    .userFindOne(req.query)
+    .then((data_result) => {
+      res.json({ result: data_result });
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json(err);
+    });
 }
 
 /**
@@ -75,9 +88,34 @@ function createUser(req, res) {
         })
         .catch((err) => {
           console.log(err);
+          res.status(500).json(err);
         });
     }
   });
+}
+
+/**
+ * <h4>
+ * <b>
+ * <span style="background-color: #F7DDBE">유저 삭제 API입니다.</span>
+ * <br />
+ * <span style="background-color: #fff5b1"> DELETE - {PUBLIC_URL}/user</span>
+ * </b>
+ * </h4>
+ * @param {String} id 아이디
+ */
+function removeUser(req, res) {
+  const { id } = req.body;
+  console.log("body", req.body);
+  service
+    .userRemove({ id })
+    .then((data_result) => {
+      res.json(data_result);
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json(err);
+    });
 }
 
 module.exports = router;
