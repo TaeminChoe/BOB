@@ -45,6 +45,12 @@ const boardSave = (data) => {
   return newBoard.save({});
 };
 
+// 게시물 삭제
+const boardDelete = (payload) => {
+  const { board_id } = payload;
+  return Board.remove.where("board_id").equals(board_id);
+};
+
 /* ----------Board End --------- */
 /* ----------Store Start --------- */
 // 전체 제휴점 조회
@@ -90,6 +96,7 @@ module.exports = {
   boardFind,
   boardFindOne,
   boardSave,
+  boardDelete,
   storeFind,
   storeFindOne,
   storeSave,
