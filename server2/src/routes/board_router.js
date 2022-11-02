@@ -103,7 +103,7 @@ function deleteBoard(req, res) {
   }
 
   service
-    .reviewRemove({ board_id })
+    .boardRemove({ board_id })
     .then((db_res) => {
       res.json(db_res);
     })
