@@ -77,6 +77,12 @@ const routes = [
             component: () => import("../page/my/ReviewPage"),
             children: [],
           },
+          {
+            path: "experiment",
+            name: "experiment",
+            component: () => import("../page/my/ExperimentPage"),
+            children: [],
+          },
         ],
       },
       {
