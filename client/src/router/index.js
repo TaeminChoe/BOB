@@ -38,8 +38,13 @@ const routes = [
       {
         path: "/restaurant",
         name: "restaurant",
-        component: () => import("../page/list/ListPage"),
+        component: () => import("../page/list/ListContainer"),
         children: [
+          {
+            path: "",
+            name: "retaurant-list",
+            component: () => import("../page/list/ListPage"),
+          },
           {
             path: "detail",
             name: "restaurant-detail",
@@ -50,6 +55,12 @@ const routes = [
             path: "add",
             name: "restaurant-add",
             component: () => import("../page/list/ListCreatePage"),
+          },
+          {
+            path: "review",
+            name: "restaurant-review",
+            component: () => import("../page/detail/RegistReview"),
+            // query: { storeId: null },
           },
         ],
       },

@@ -1,5 +1,4 @@
 <template>
-  <router-view v-if="isListAddPage" />
   <slot v-if="isListPage">
     <div class="title-text">
       <div>Restaurant</div>
@@ -40,7 +39,7 @@
 </template>
 
 <script>
-import { deleteStore, getStore } from "@/gql/service-api";
+import { deleteStore } from "@/gql/service-api";
 
 export default {
   name: "ListPage",
@@ -59,12 +58,6 @@ export default {
     },
   },
   methods: {
-    getListData() {
-      getStore().then((res) => {
-        console.log("getStoreData", res.data.stores);
-        this.lists = res.data.stores;
-      });
-    },
     handleAddList() {
       this.$router.push("restaurant/add");
     },
@@ -97,8 +90,6 @@ export default {
       return text.substring(0, maxLength) + "...";
     },
   },
-  created() {
-    this.getListData();
-  },
+  created() {},
 };
 </script>
