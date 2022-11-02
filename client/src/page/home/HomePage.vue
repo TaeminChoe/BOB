@@ -52,8 +52,7 @@
 </template>
 
 <script>
-import { getUser } from "../../ApiService";
-// console.log("읭 ", ApiService);
+import { getUser } from "@/system/ApiService";
 export default {
   name: "HomePage",
   methods: {

@@ -3,6 +3,9 @@
   <div class="content-layout">
     <input class="input-box" placeholder="Your Name" v-model="name" />
     <input class="input-box" placeholder="ID" v-model="id" />
+    <button class="submit-button bgcolor-green" @click="handleClickIdCheck">
+      중복확인
+    </button>
     <input class="input-box" placeholder="Create Password" v-model="pw" />
     <input class="input-box" placeholder="Check Password" v-model="pwConfirm" />
     <button class="submit-button bgcolor-green" @click="handleClickSignup">
@@ -18,7 +21,7 @@
  * 2. m_date 논의 후 양식 결정
  * 3. 입력값 유효 검사
  */
-import { createUser } from "@/gql/service-api";
+import { createAccountInfo, getUserDetail } from "@/system/ApiService";
 export default {
   name: "SignupPage",
   data() {
@@ -39,22 +42,16 @@ export default {
       } else {
         const payload = {
           id,
-          date: new Date().getTime().toString(),
           pw,
           name,
           auth: "client",
         };
-        createUser(payload).then((res) => {
-          const { message, succeed } = res.data.signUp;
-          // CASE1. 회원가입 성공
-          if (succeed) {
-            this.$router.push("login");
-          }
-          // CASE2. 회원가입 실패
-          else {
-            alert(message);
-          }
-        });
+
+        createAccountInfo(payload)
+          .then((res) => {
+            console.log("회원가입 res", res);
+          })
+          .catch((e) => console.error(e));
       }
     },
 
@@ -64,6 +61,11 @@ export default {
       if (!id || !name || !pw || !pwConfirm) return "정보 입력 공백";
       else if (pw !== pwConfirm) return "패스워드 확인이 불일치합니다.";
       else return "";
+    },
+    // 아이디 중복확인
+    handleClickIdCheck() {
+      const { id } = this;
+      getUserDetail({ id });
     },
   },
 };
