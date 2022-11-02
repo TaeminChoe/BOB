@@ -24,7 +24,7 @@ export default {
       this.$store.state.menuOpen = true;
     },
     handleClickPopup() {
-      openAlert("팝업테스트안녕하세요");
+      openAlert("SUCCESS");
     },
   },
 };
