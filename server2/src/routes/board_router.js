@@ -11,6 +11,7 @@ const service = require("../serviceDB");
 router.get("/", getBoardList);
 router.get("/detail", getBoardDetail);
 router.post("/", createBoard);
+router.delete("/", deleteBoard);
 
 /**
  * <h4>
@@ -72,6 +73,37 @@ function createBoard(req, res) {
   const board_id = mongoose.Types.ObjectId();
   service
     .boardSave({ board_id, author, title, description })
+    .then((db_res) => {
+      res.json(db_res);
+    })
+    .catch((e) => {
+      res.status(500).json(e);
+    });
+}
+
+/**
+ * <h4>
+ * <b>
+ * <span style="background-color: #F7DDBE">게시글 삭제 API입니다.</span>
+ * <br />
+ * <span style="background-color: #fff5b1">DELETE - {PUBLIC_URL}/board</span>
+ * </b>
+ * </h4>
+ * @param {String} board_id 게시글 고유 아이디
+ * @desc board_id 유효하지 않아도 응답은 정상(200)으로 전달 됨.
+ *
+ */
+function deleteBoard(req, res) {
+  const { board_id } = req.body;
+  if (!board_id) {
+    res.status(500).json({
+      code: 500,
+      msg: "need board id",
+    });
+  }
+
+  service
+    .boardRemove({ board_id })
     .then((db_res) => {
       res.json(db_res);
     })

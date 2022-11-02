@@ -90,6 +90,8 @@ function createReview(req, res) {
  * </b>
  * </h4>
  * @param {String} review_id 리뷰 고유 아이디
+ * @desc review_id가 유효하지 않아도 응답은 정상(200)으로 전달 됨.
+ *
  */
 function deleteReview(req, res) {
   const { review_id } = req.body;
