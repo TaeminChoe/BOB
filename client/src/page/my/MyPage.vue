@@ -12,6 +12,9 @@
       <div class="mypage-box" name="review" @click="handleGoReview">
         작성리뷰확인
       </div>
+      <div class="mypage-box" name="review" @click="handleGoExperiment">
+        실험실
+      </div>
     </div>
   </slot>
 </template>
@@ -36,6 +39,9 @@ export default {
   methods: {
     handleGoReview() {
       this.$router.push("my/review");
+    },
+    handleGoExperiment() {
+      this.$router.push("my/experiment");
     },
   },
 };
