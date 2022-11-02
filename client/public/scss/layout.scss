@@ -1,4 +1,5 @@
 body {
+  font-family: "Roboto", sans-serif;
   .bgcolor-green {
     background-color: #43d392;
   }
@@ -36,7 +37,6 @@ body {
     padding: 1rem;
     font-size: 1.8rem;
     font-weight: 700;
-    font-family: "Roboto", sans-serif;
 
     button {
       width: calc(40%);
@@ -86,7 +86,6 @@ body {
       flex-flow: column;
       font-size: 0.8rem;
       font-weight: 700;
-      font-family: "Roboto", sans-serif;
 
       .account-name {
         font-size: 2rem;
@@ -132,7 +131,6 @@ body {
       }
 
       .text-box {
-        font-family: "Roboto";
         font-style: normal;
         width: 50%;
         .list-title {
@@ -147,6 +145,37 @@ body {
           padding: 0.5rem;
           font-weight: 400;
           font-size: 0.7rem;
+        }
+      }
+
+      .dounut-box {
+        width: 35%;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .circle-box {
+          width: 6rem;
+          height: 6rem;
+          border-radius: 50%;
+          // background-color: gold;
+          position: relative;
+          // background: conic-gradient(white 20%, #43d392 20% 80%);
+        }
+        .text-box {
+          width: 100%;
+          height: 100%;
+          font-size: 4em;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          text-align: center;
+          line-height: 6rem;
+          position: absolute;
+          color: white;
+          font-weight: 900;
+          -webkit-text-stroke: 3px black;
         }
       }
 
@@ -175,7 +204,6 @@ body {
       }
 
       .reciept-desc-box {
-        font-family: "Roboto";
         font-style: normal;
         width: 75%;
         display: flex;
@@ -204,7 +232,6 @@ body {
             height: 33%;
             display: flex;
             font-weight: 700;
-            font-family: "Roboto", sans-serif;
             flex-flow: row;
             .review-text {
               width: 30%;
@@ -266,7 +293,6 @@ body {
       }
 
       .text-box {
-        font-family: "Roboto";
         font-style: normal;
         width: 100%;
         height: 3.5rem;
@@ -286,7 +312,6 @@ body {
       }
 
       .detail-box {
-        font-family: "Roboto";
         font-style: normal;
         width: calc(100% - 1rem);
         padding: 1.3rem 0.5rem 0 0.5rem;
@@ -345,7 +370,6 @@ body {
   box-shadow: 0 0 0 3px #000 inset;
   font-size: 1.8rem;
   font-weight: 700;
-  font-family: "Roboto", sans-serif;
 
   .cross-style {
     top: 25px !important;
@@ -406,6 +430,5 @@ body {
     color: #ff9551;
     font-size: 2.5rem;
     font-weight: 400;
-    font-family: "Roboto", sans-serif;
   }
 }
